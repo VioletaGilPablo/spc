@@ -194,8 +194,10 @@ h1 .dorado{color:var(--oro);font-weight:600}
 /* Grid de vídeos testimoniales */
 .grid-videos{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
+  grid-template-columns:repeat(2,1fr);
+  gap:26px 22px;
+  max-width:820px;
+  margin:0 auto;
 }
 .testimonio-video-tarjeta{display:flex;flex-direction:column;gap:14px}
 .video-testimonio{
@@ -366,7 +368,7 @@ h1 .dorado{color:var(--oro);font-weight:600}
   <section class="seccion">
     <div class="seccion-cabecera">
       <span class="seccion-etiqueta">Casos de éxito</span>
-      <h2 class="seccion-titulo">Algunas alumnas que aplicaron el método SPC cuentan su experiencia</h2>
+      <h2 class="seccion-titulo">Algunas personas que aplicaron el método SPC cuentan su experiencia</h2>
     </div>
     <div class="grid-videos">
       <div class="testimonio-video-tarjeta">
@@ -389,6 +391,13 @@ h1 .dorado{color:var(--oro);font-weight:600}
           <div class="video-play"><svg viewBox="0 0 24 24" fill="#292929"><path d="M8 5v14l11-7z"/></svg></div>
         </div>
         <p class="testimonio-titulo">Alejandra Cortés: CrossFit, embarazo, posparto y cesárea. Realidades y mitos</p>
+      </div>
+      <div class="testimonio-video-tarjeta">
+        <div class="video-testimonio" data-video-id="BfJV5tExs3I">
+          <img src="https://img.youtube.com/vi/BfJV5tExs3I/maxresdefault.jpg" alt="Historia de Alberto" loading="lazy">
+          <div class="video-play"><svg viewBox="0 0 24 24" fill="#292929"><path d="M8 5v14l11-7z"/></svg></div>
+        </div>
+        <p class="testimonio-titulo">Historia de Alberto: dolor pélvico «crónico»</p>
       </div>
     </div>
   </section>
