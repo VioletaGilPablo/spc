@@ -219,6 +219,65 @@ h1 .dorado{color:var(--oro);font-weight:600}
   text-align:center;
 }
 
+/* ---------- Preguntas frecuentes (acordeón) ---------- */
+.faq{max-width:760px;margin:0 auto}
+.faq-item{
+  border:1px solid var(--borde-suave);
+  border-radius:16px;
+  background:rgba(243,233,234,.025);
+  margin-bottom:12px;
+  transition:border-color .2s, background .2s;
+}
+.faq-item[open]{border-color:var(--borde);background:rgba(239,219,130,.04)}
+.faq-item summary{
+  list-style:none;
+  cursor:pointer;
+  display:flex;align-items:center;justify-content:space-between;gap:18px;
+  padding:22px 24px;
+  font-family:var(--titulo);
+  font-weight:500;
+  font-size:clamp(17px,2.6vw,20px);
+  line-height:1.35;
+  color:#fff;
+}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary:focus-visible{outline:2px solid var(--rosa);outline-offset:3px;border-radius:16px}
+.faq-icono{
+  flex:0 0 auto;
+  position:relative;
+  width:30px;height:30px;
+  border:1px solid var(--borde);
+  border-radius:50%;
+}
+.faq-icono::before,.faq-icono::after{
+  content:"";position:absolute;top:50%;left:50%;
+  width:12px;height:1.6px;background:var(--oro);
+  transform:translate(-50%,-50%);
+  transition:transform .25s;
+}
+.faq-icono::after{transform:translate(-50%,-50%) rotate(90deg)}
+.faq-item[open] .faq-icono::after{transform:translate(-50%,-50%) rotate(0deg)}
+.faq-contenido{padding:0 24px 26px}
+.faq-contenido p{color:var(--texto-suave);margin-bottom:16px}
+.faq-contenido p:last-of-type{margin-bottom:0}
+.faq-contenido strong{color:var(--oro);font-weight:400}
+.faq-cita{
+  border-left:2px solid var(--oro);
+  background:rgba(239,219,130,.05);
+  border-radius:0 12px 12px 0;
+  padding:16px 20px;
+  margin:20px 0 0;
+}
+.faq-cita p{color:var(--texto);margin:0}
+.faq-captura{
+  margin-top:22px;
+  border:1px solid var(--borde);
+  border-radius:14px;
+  overflow:hidden;
+  background:var(--fondo-2);
+}
+.faq-captura img{width:100%;height:auto;display:block}
+
 /* ---------- Pie ---------- */
 .pie{
   text-align:center;
@@ -331,6 +390,60 @@ h1 .dorado{color:var(--oro);font-weight:600}
         </div>
         <p class="testimonio-titulo">Alejandra Cortés: CrossFit, embarazo, posparto y cesárea. Realidades y mitos</p>
       </div>
+    </div>
+  </section>
+
+  <!-- Preguntas frecuentes. Cada <details> es una pregunta; name="faq" hace que al abrir una se cierre la anterior. -->
+  <section class="seccion">
+    <div class="seccion-cabecera">
+      <span class="seccion-etiqueta">Preguntas frecuentes</span>
+      <h2 class="seccion-titulo">Lo que más me preguntan antes de empezar</h2>
+    </div>
+    <div class="faq">
+
+      <details class="faq-item" name="faq" open>
+        <summary>Ya he ido a fisio de suelo pélvico. ¿Esto no va a ser lo mismo? <span class="faq-icono" aria-hidden="true"></span></summary>
+        <div class="faq-contenido">
+          <p><strong>No.</strong> Y de hecho, que ya hayas ido es un punto a favor: significa que lo que te falta es algo distinto, no más de lo mismo. En fisio normalmente se trabaja la zona de forma aislada y desde la consciencia: aprieta, contrae, cierra. Aquí no vas a apretar nada. Analizamos qué recursos tiene tu cuerpo y cuáles le faltan, y los desarrollamos con entrenamiento, dentro de tu movimiento real.</p>
+          <div class="faq-captura"><img src="faq/faq-1.webp" alt="Mensaje de WhatsApp: empezar antes, porque pensaba que con fisio se iba a solucionar solo" loading="lazy"></div>
+        </div>
+      </details>
+
+      <details class="faq-item" name="faq">
+        <summary>¿Esto es otro programa de ejercicios como los que ya he probado? <span class="faq-icono" aria-hidden="true"></span></summary>
+        <div class="faq-contenido">
+          <p><strong>No son ejercicios sueltos.</strong> Es una valoración de tu cuerpo, una programación que se construye solo para ti y que cambia cada semana, y alguien contigo durante el proceso ajustándola según cómo te va yendo.</p>
+          <div class="faq-captura"><img src="faq/faq-2.webp" alt="Mensaje de WhatsApp: la forma de trabajar, diferente a lo que había visto hasta ahora" loading="lazy"></div>
+        </div>
+      </details>
+
+      <details class="faq-item" name="faq">
+        <summary>Yo ya he fallado otras veces. ¿Y si no soy constante? <span class="faq-icono" aria-hidden="true"></span></summary>
+        <div class="faq-contenido">
+          <p>Lo que has hecho hasta ahora eran deberes sueltos: un vídeo, tú sola, sin nadie detrás y sin ver resultados. Eso lo abandona cualquiera. Aquí tienes estructura, tienes a alguien al otro lado cada semana y, si una semana no puede ser, se ajusta. <strong>No hay látigo.</strong></p>
+          <div class="faq-captura"><img src="faq/faq-3.webp" alt="Mensaje de WhatsApp: encantada con el proceso, por tu paciencia y comprensión" loading="lazy"></div>
+        </div>
+      </details>
+
+      <details class="faq-item" name="faq">
+        <summary>¿Funciona de verdad siendo online? <span class="faq-icono" aria-hidden="true"></span></summary>
+        <div class="faq-contenido">
+          <p><strong>Trabajo solo online, y no por comodidad.</strong> En presencial te veo una o dos horas a la semana y del resto no sé nada. Online sé cómo has dormido, cómo te ha ido el WOD del martes y si estás premenstrual, y puedo ajustarte la semana el mismo día que me lo cuentas.</p>
+          <div class="faq-captura"><img src="faq/faq-4.webp" alt="Mensaje de WhatsApp: me he sentido acompañada y no agobiada, la comunicación ha sido buena" loading="lazy"></div>
+        </div>
+      </details>
+
+      <details class="faq-item" name="faq">
+        <summary>¿Es caro? ¿Merece la pena ahora? <span class="faq-icono" aria-hidden="true"></span></summary>
+        <div class="faq-contenido">
+          <p>Aquí lo que pagas no son sesiones: es <strong>que alguien esté dentro de tu semana durante tres meses.</strong> Y una cosa que me dicen mucho: lo caro acaba siendo el tiempo que se pasa esperando a que mejore solo.</p>
+          <div class="faq-cita">
+            <p>Esto me lo dicen mucho en las llamadas. Una me dijo: «tener a una persona a tu lado se tiene que pagar, no me parece caro». Otra, que es autónoma: «no tienes que justificarte». Y otra directamente me dijo que le parecía poco para todo el trabajo que es.</p>
+          </div>
+          <div class="faq-captura"><img src="faq/faq-5.webp" alt="Mensaje de WhatsApp: empezar antes, no esperar que mejore con el tiempo" loading="lazy"></div>
+        </div>
+      </details>
+
     </div>
   </section>
 
