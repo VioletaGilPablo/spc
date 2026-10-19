@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>7 semanas para correr sin pérdidas de orina | Violeta Gil Pablo</title>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="description" content="La progresión que te lleva paso a paso, escalón a escalón, a correr sin pérdidas de orina.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&family=Varela+Round&display=swap" rel="stylesheet">
+<style>
+:root{
+  --vino:#784755;--vino-osc:#5e3542;--oro:#efdb82;--rosa:#d19c92;
+  --lila:#e8d7e2;--lila-2:#f3e9ef;--crema:#fffaf6;--negro:#292929;
+  --texto:#3d2c33;--suave:#7a6670;
+  --titulo:"League Spartan",sans-serif;--cuerpo:"Varela Round",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:var(--cuerpo);background:var(--crema);color:var(--texto);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+.progreso{position:fixed;top:0;left:0;height:4px;width:0;background:linear-gradient(90deg,var(--rosa),var(--vino));z-index:50}
+.ancho{max-width:880px;margin:0 auto;padding:0 22px}
+section{padding:84px 0}
+.fondo-lila{background:var(--lila-2)}
+.etiqueta{display:inline-block;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--vino);background:var(--lila);border-radius:999px;padding:7px 16px;margin-bottom:18px}
+h1,h2,h3{font-family:var(--titulo);color:var(--vino-osc);line-height:1.12}
+h2{font-size:clamp(28px,5vw,42px);font-weight:600;margin-bottom:18px}
+h3{font-size:clamp(19px,3vw,23px);font-weight:600;margin-bottom:8px}
+p+p{margin-top:14px}
+strong{color:var(--vino-osc)}
+.dorado{background:linear-gradient(transparent 58%,rgba(239,219,130,.75) 58%);padding:0 2px}
+.boton{display:inline-flex;align-items:center;gap:10px;font-family:var(--cuerpo);font-weight:600;font-size:14.5px;letter-spacing:1.4px;text-transform:uppercase;text-decoration:none;color:var(--negro);background:var(--oro);border:1px solid var(--oro);border-radius:999px;padding:16px 28px;transition:all .2s;cursor:pointer}
+.boton:hover{background:var(--vino);border-color:var(--vino);color:#fff}
+.boton.linea{background:transparent;color:var(--vino);border-color:var(--vino)}
+.boton svg{width:18px;height:18px}
+
+/* Hero */
+.hero{padding:40px 0 76px;text-align:center;background:radial-gradient(70% 60% at 85% 10%,var(--lila) 0,transparent 70%),radial-gradient(60% 50% at 0% 100%,var(--lila-2) 0,transparent 70%)}
+.hero .logo{width:190px;margin:0 auto 40px}
+.hero h1{font-size:clamp(40px,7vw,68px);font-weight:700;letter-spacing:-.5px;max-width:720px;margin:0 auto}
+.hero h1 .num{display:inline-block;background:var(--oro);color:var(--vino-osc);border-radius:18px;padding:0 14px;transform:rotate(-2deg)}
+.hero .bajada{font-size:19px;color:var(--suave);margin:20px auto 30px;max-width:520px}
+.hero .meta{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-top:18px;font-size:13.5px;color:var(--suave)}
+.hero .meta b{color:var(--vino)}
+
+/* Intro */
+.intro{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:30px}
+.intro div{border-radius:20px;padding:22px 22px}
+.intro .no{background:#fff;border:1px dashed var(--rosa)}
+.intro .si{background:var(--vino);color:#fff}
+.intro .si b{color:var(--oro)}
+.intro b{display:block;font-family:var(--titulo);font-size:19px;color:var(--vino-osc);margin-bottom:4px}
+.frase-intro{margin-top:30px;text-align:center;font-family:var(--titulo);font-size:clamp(21px,3.6vw,28px);color:var(--vino-osc);max-width:660px;margin-left:auto;margin-right:auto;line-height:1.3}
+
+/* Escalera */
+.escalera{display:flex;align-items:flex-end;gap:8px;height:240px;margin:40px 0 12px;padding:0 4px;border-bottom:2px solid var(--lila)}
+.escalon{flex:1;background:var(--lila);border-radius:12px 12px 0 0;position:relative;height:0;transition:height .9s cubic-bezier(.2,.8,.2,1)}
+.escalon span{position:absolute;top:-26px;left:0;right:0;text-align:center;font-family:var(--titulo);font-weight:600;font-size:14px;color:var(--vino);opacity:0;transition:opacity .4s .5s}
+.escalon.on span{opacity:1}
+.escalon.a{background:var(--rosa)}
+.escalon.z{background:var(--vino)}
+.escalera-pie{display:flex;justify-content:space-between;font-size:13px;color:var(--suave)}
+.escalera-pie b{color:var(--vino)}
+.regla{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
+.regla div{background:#fff;border:1px solid var(--lila);border-radius:18px;padding:18px;text-align:center;font-size:15px}
+.regla div b{display:block;font-family:var(--titulo);font-size:18px;color:var(--vino-osc)}
+.regla .ok{background:var(--oro);border-color:var(--oro)}
+
+/* Guitarra */
+.guitarra{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:30px 0}
+.instr{border-radius:22px;padding:26px 24px;display:flex;gap:16px;align-items:flex-start}
+.instr svg{flex:0 0 auto;width:54px;height:54px}
+.instr.cancion{background:#fff;border:1px solid var(--lila)}
+.instr.solfeo{background:var(--vino);color:#fff}
+.instr.solfeo h3{color:var(--oro)}
+.paralelo{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:22px}
+.par{background:#fff;border-radius:18px;padding:18px 14px;text-align:center;font-size:14px;border:1px solid var(--lila)}
+.par svg{width:36px;height:36px;margin:0 auto 8px}
+.aviso{margin-top:26px;display:flex;gap:14px;align-items:flex-start;background:#fff4c9;border-radius:18px;padding:18px 20px;font-size:15px}
+.aviso svg{flex:0 0 auto;width:28px;height:28px}
+
+/* Plan */
+.leyenda{display:flex;flex-wrap:wrap;gap:16px;font-size:13.5px;color:var(--suave);margin:8px 0 22px}
+.leyenda span{display:inline-flex;align-items:center;gap:7px}
+.leyenda i{width:16px;height:10px;border-radius:4px;display:inline-block}
+.t-a{background:var(--lila)}.t-s{background:var(--rosa)}.t-m{background:var(--vino)}.t-z{background:var(--oro)}
+.semanas{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;scrollbar-width:none}
+.semanas::-webkit-scrollbar{display:none}
+.semanas button{flex:1 0 auto;min-width:72px;border:1px solid var(--lila);background:#fff;border-radius:16px;padding:10px 8px;font-family:var(--titulo);color:var(--vino-osc);cursor:pointer;transition:all .2s;position:relative}
+.semanas button small{display:block;font-family:var(--cuerpo);font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--suave)}
+.semanas button b{font-size:24px;line-height:1}
+.semanas button.on{background:var(--vino);border-color:var(--vino);color:#fff}
+.semanas button.on small{color:rgba(255,255,255,.75)}
+.semanas button.hecha::after{content:"✓";position:absolute;top:-7px;right:-5px;width:20px;height:20px;border-radius:50%;background:var(--oro);color:var(--vino-osc);font-size:12px;display:grid;place-items:center;font-family:var(--cuerpo)}
+.panel{background:#fff;border:1px solid var(--lila);border-radius:26px;padding:28px 26px;margin-top:18px;box-shadow:0 24px 50px -38px rgba(94,53,66,.6)}
+.panel-cab{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;flex-wrap:wrap;margin-bottom:8px}
+.panel-cab h3{font-size:clamp(24px,4vw,30px);margin:0}
+.minutos{text-align:right}
+.minutos b{display:block;font-family:var(--titulo);font-size:34px;color:var(--vino);line-height:1}
+.minutos span{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--suave)}
+.bloque{padding:18px 0;border-top:1px solid var(--lila-2)}
+.bloque:first-of-type{border-top:0}
+.bloque-cab{display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+.bloque-cab b{font-family:var(--titulo);font-size:15px;letter-spacing:1.5px;text-transform:uppercase;color:var(--vino)}
+.bloque-cab .rep{font-family:var(--titulo);font-weight:700;color:var(--vino-osc);background:var(--oro);border-radius:999px;padding:1px 10px;font-size:15px}
+.barra{display:flex;gap:3px;height:16px;margin:10px 0 8px}
+.barra i{display:block;border-radius:5px;transform-origin:left;animation:crece .6s ease both}
+@keyframes crece{from{transform:scaleX(0)}}
+.bloque p{font-size:15px;color:var(--texto)}
+.bloque .opc{font-size:12px;color:var(--suave);text-transform:none;letter-spacing:0;font-family:var(--cuerpo)}
+.calma{background:var(--lila-2);border-radius:18px;padding:18px 20px;margin-top:8px;font-size:15px}
+.calma b{font-family:var(--titulo);color:var(--vino-osc);font-size:17px}
+.check{display:flex;align-items:center;gap:12px;margin-top:22px;cursor:pointer;font-size:15px;user-select:none}
+.check input{appearance:none;-webkit-appearance:none;width:26px;height:26px;border:2px solid var(--vino);border-radius:8px;cursor:pointer;flex:0 0 auto;display:grid;place-items:center}
+.check input:checked{background:var(--vino)}
+.check input:checked::after{content:"✓";color:#fff;font-size:15px}
+.reflexion{margin-top:30px;text-align:center}
+.reflexion p{font-family:var(--titulo);font-size:clamp(20px,3.4vw,26px);color:var(--vino-osc)}
+.reflexion small{display:block;color:var(--suave);font-size:14px;margin-top:6px}
+
+/* Sobre mí y cierre */
+.sobre{display:grid;grid-template-columns:.8fr 1.2fr;gap:36px;align-items:center}
+.sobre .foto{border-radius:26px;overflow:hidden;transform:rotate(-2deg);box-shadow:0 26px 50px -30px rgba(94,53,66,.7);border:6px solid #fff}
+.redes{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:34px}
+.red{background:#fff;border:1px solid var(--lila);border-radius:18px;padding:18px 14px;text-decoration:none;text-align:center;transition:transform .2s,border-color .2s}
+.red:hover{transform:translateY(-4px);border-color:var(--vino)}
+.red svg{width:30px;height:30px;margin:0 auto 8px;color:var(--vino)}
+.red b{display:block;font-family:var(--titulo);color:var(--vino-osc);font-size:16px}
+.red span{font-size:12.5px;color:var(--suave);line-height:1.4;display:block;margin-top:4px}
+.cierre{background:var(--vino);color:#fff;text-align:center;border-radius:34px 34px 0 0}
+.cierre h2{color:#fff}
+.cierre p{color:rgba(255,255,255,.88);max-width:600px;margin-left:auto;margin-right:auto}
+.cierre .grande{font-family:var(--titulo);font-size:clamp(20px,3.4vw,26px);color:var(--oro);margin:26px auto}
+.cierre .boton.linea{color:#fff;border-color:rgba(255,255,255,.6)}
+.cierre .boton.linea:hover{background:#fff;color:var(--vino)}
+.firma{margin-top:36px;font-size:14px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.7)}
+.descarga-final{margin-top:40px;padding-top:30px;border-top:1px solid rgba(255,255,255,.15)}
+
+.js .revela{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.js .revela.visible{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js .revela{opacity:1;transform:none;transition:none}.barra i{animation:none}.escalon{transition:none}}
+@media (max-width:760px){
+  body{font-size:16px}
+  section{padding:64px 0}
+  .intro,.guitarra,.sobre,.regla{grid-template-columns:1fr}
+  .paralelo{grid-template-columns:repeat(2,1fr)}
+  .redes{grid-template-columns:1fr}
+  .escalera{height:180px;gap:5px}
+  .sobre .foto{max-width:300px;margin:0 auto}
+}
+</style>
+</head>
+<body>
+<div class="progreso" id="progreso"></div>
+
+<header class="hero">
+  <div class="ancho revela">
+    <img class="logo" src="../../logo-violeta.png" alt="Violeta Gil Pablo">
+    <span class="etiqueta">Guía gratuita · Metodología CALP</span>
+    <h1><span class="num">7 semanas</span> para correr sin pérdidas de orina</h1>
+    <p class="bajada">La progresión que te lleva paso a paso, escalón a escalón.</p>
+    <a class="boton" href="guia-7-semanas-correr.pdf" download>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+      Descargar la guía en PDF
+    </a>
+    <div class="meta"><span>🏃‍♀️ <b>1 sesión</b> de carrera por semana</span><span>✍️ Por <b>Violeta Gil Pablo</b></span></div>
+  </div>
+</header>
+
+<!-- Introducción -->
+<section>
+  <div class="ancho">
+    <div class="revela">
+      <span class="etiqueta">Introducción</span>
+      <h2>Correr es una capacidad que <span class="dorado">se construye</span></h2>
+      <p>Esta guía te da las claves para construir, semana a semana, la capacidad de correr sin pérdidas de orina. Vas a entender qué es la sobrecarga progresiva, por qué no se puede saltar de 0 a 100 y por qué correr, por sí solo, no es suficiente.</p>
+    </div>
+    <div class="intro">
+      <div class="no revela"><b>No es esto</b>Un plan de «aguanta y ya verás».</div>
+      <div class="si revela"><b>Es esto</b>Una progresión escalón a escalón, para que tu cuerpo llegue preparado a cada exigencia antes de pedirle la siguiente.</div>
+    </div>
+    <p class="frase-intro revela">Deja de ver correr como algo que «sí puedes» o «no puedes».</p>
+  </div>
+</section>
+
+<!-- Sobrecarga progresiva -->
+<section class="fondo-lila">
+  <div class="ancho">
+    <div class="revela">
+      <span class="etiqueta">La sobrecarga progresiva</span>
+      <h2>Cómo se construye una capacidad</h2>
+      <p>Ningún estímulo empieza directamente en su versión más exigente. Ni en el entrenamiento de fuerza, ni al correr, ni en nada: siempre hay una <strong>escala de grises</strong> entre el punto A (donde estás ahora) y el punto Z (tu objetivo). Esos grises son los escalones intermedios.</p>
+    </div>
+    <div class="escalera" id="escalera" role="img" aria-label="Escalera de 7 escalones entre el punto A y el punto Z"></div>
+    <div class="escalera-pie"><span><b>A</b> · donde estás ahora</span><span>tu objetivo · <b>Z</b></span></div>
+    <div class="regla">
+      <div class="revela"><b>Ni tan poco</b>que no haya progreso.</div>
+      <div class="ok revela"><b>Un poco más</b>de lo que tu cuerpo ya puede sostener.</div>
+      <div class="revela"><b>Ni tan de golpe</b>que tu cuerpo no lo pueda absorber.</div>
+    </div>
+    <p class="revela" style="margin-top:26px">Por eso esta guía no empieza con «corre 30 minutos». Empieza con series cortas de trote suave combinadas con caminar, y va aumentando el tiempo de carrera continua semana tras semana. <strong>Cada semana es un escalón, y cada escalón solo se sube cuando el anterior está sostenido.</strong></p>
+  </div>
+</section>
+
+<!-- Trabajo en paralelo -->
+<section>
+  <div class="ancho">
+    <div class="revela">
+      <span class="etiqueta">El trabajo en paralelo</span>
+      <h2>Correr es necesario, pero no suficiente</h2>
+      <p>Esta es la parte que casi nadie cuenta. Aumentar poco a poco el gesto específico, correr, es necesario… pero no suficiente.</p>
+    </div>
+    <div class="guitarra">
+      <div class="instr cancion revela">
+        <svg viewBox="0 0 64 64" fill="none" stroke="#784755" stroke-width="3" stroke-linecap="round"><path d="M44 8l12 12M50 14L30 34"/><path d="M28 30c-6-2-12 0-14 4-4 0-8 4-6 10s8 10 14 8c4 0 6-4 6-8 4-2 6-8 0-14z" fill="#efdb82"/><circle cx="21" cy="43" r="3" fill="#784755"/></svg>
+        <div><h3>La canción</h3><p>Practicar la canción que quieres tocar, cada vez un poco más rápido y más completa. Es como ir sumando minutos de carrera.</p></div>
+      </div>
+      <div class="instr solfeo revela">
+        <svg viewBox="0 0 64 64" fill="none" stroke="#efdb82" stroke-width="3" stroke-linecap="round"><path d="M8 18h48M8 26h48M8 34h48M8 42h48"/><circle cx="22" cy="40" r="5" fill="#efdb82"/><path d="M27 40V16"/><circle cx="42" cy="32" r="5" fill="#efdb82"/><path d="M47 32V10"/></svg>
+        <div><h3>El solfeo</h3><p>Si solo practicas la canción y nunca estudias solfeo, tu progreso tiene un techo. El solfeo es lo que sostiene todo lo demás.</p></div>
+      </div>
+    </div>
+    <h3 class="revela">Tu «solfeo» para correr sin pérdidas</h3>
+    <div class="paralelo">
+      <div class="par revela"><svg viewBox="0 0 24 24" fill="none" stroke="#784755" stroke-width="1.8" stroke-linecap="round"><path d="M4 12c3-4 5 4 8 0s5 4 8 0"/><path d="M4 7c3-4 5 4 8 0s5 4 8 0" opacity=".5"/></svg>Tu patrón respiratorio</div>
+      <div class="par revela"><svg viewBox="0 0 24 24" fill="none" stroke="#784755" stroke-width="1.8" stroke-linecap="round"><circle cx="13" cy="4" r="2"/><path d="M9 21l3-7 3 3v4M12 14l-1-5 4 2 2 3M7 11l4-2"/></svg>Cómo respiras y cómo caminas</div>
+      <div class="par revela"><svg viewBox="0 0 24 24" fill="none" stroke="#784755" stroke-width="1.8" stroke-linecap="round"><path d="M12 3a9 9 0 1 1-9 9"/><path d="M3 12l3-3M3 12l3 3"/></svg>Rango de movimiento: pies, pelvis y caja torácica</div>
+      <div class="par revela"><svg viewBox="0 0 24 24" fill="none" stroke="#784755" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Tu contexto: estrés, descanso, ciclo, carga</div>
+      <div class="par revela"><svg viewBox="0 0 24 24" fill="none" stroke="#784755" stroke-width="1.8" stroke-linecap="round"><path d="M4 18h16"/><path d="M6 18V10M10 18V7M14 18V9M18 18v-4"/><path d="M3 5h18" stroke-dasharray="2 2"/></svg>No superar tu umbral de tolerancia</div>
+    </div>
+    <div class="aviso revela">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#784755" stroke-width="2" stroke-linecap="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg>
+      <p>No lo desarrollo aquí a fondo, para eso tienes mis otras guías gratuitas, pero necesitabas saber que existe y que forma parte del proceso. <strong>Si en algún momento de estas 7 semanas necesitas reforzar alguna parte, escríbeme</strong>: te escucho, entiendo tu caso y te paso el recurso que mejor te encaje.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Plan semana a semana -->
+<section class="fondo-lila" id="plan">
+  <div class="ancho">
+    <div class="revela">
+      <span class="etiqueta">La progresión completa</span>
+      <h2>7 semanas, escalón a escalón</h2>
+      <p>Cada semana incluye una sesión de carrera. Todas siguen la misma estructura: <strong>activación, bloques de trabajo y vuelta a la calma con reflexión corporal</strong>. Elige tu semana:</p>
+    </div>
+    <div class="leyenda"><span><i class="t-a"></i>Andar</span><span><i class="t-s"></i>Trote suave</span><span><i class="t-m"></i>Trote medio / carrera</span><span><i class="t-z"></i>Ritmo alegre / zona alta</span></div>
+    <div class="semanas" id="semanas" role="tablist"></div>
+    <div class="panel" id="panel" role="tabpanel"></div>
+    <div class="reflexion revela">
+      <p>«¿Cómo ha respondido mi cuerpo, del 1 al 10?»</p>
+      <small>La pregunta con la que cierras cada sesión.</small>
+    </div>
+  </div>
+</section>
+
+<!-- Sobre mí -->
+<section>
+  <div class="ancho">
+    <div class="sobre">
+      <div class="foto revela"><img src="../../violeta-foto.jpg" alt="Violeta Gil Pablo"></div>
+      <div class="revela">
+        <span class="etiqueta">Sobre mí</span>
+        <h2>Soy Violeta</h2>
+        <p>Entrenadora especializada en mujer y entrenamiento de fuerza, con la <strong>metodología CALP</strong>: integrar el conjunto abdominal, lumbar y pélvico en tu deporte y en tu día a día.</p>
+      </div>
+    </div>
+    <div class="redes">
+      <a class="red revela" href="https://www.instagram.com/violetagilpablo/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg><b>Instagram</b><span>Donde más activa estoy, a diario</span></a>
+      <a class="red revela" href="https://youtube.com/@violetagilpablocoach" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8zM9.8 15.1V8.9l5.4 3.1z"/></svg><b>YouTube</b><span>Más de 450 ejercicios para integrar el CALP</span></a>
+      <a class="red revela" href="https://www.violetagilpablo.com/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg><b>Mi web</b><span>Cómo trabajo y cómo puedo ayudarte</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- Cierre -->
+<section class="cierre">
+  <div class="ancho revela">
+    <h2>Gracias por llegar hasta aquí</h2>
+    <p>La información por sí sola no transforma, pero la constancia sí. Ojalá esta guía te acompañe semana a semana y llegues corriendo sin pérdidas de orina.</p>
+    <p>Si en el camino sientes que necesitas algo más específico para tu caso, porque tienes dolor, porque ya lo has probado antes y no funcionó o porque quieres ir a la raíz, escríbeme:</p>
+    <p class="grande">«Estoy lista para integrar el CALP en mi entreno y en mi vida.»</p>
+    <a class="boton" href="https://ig.me/m/violetagilpablo" target="_blank" rel="noopener">Escribirme por Instagram</a>
+    <p class="firma">No estás sola, y correr con seguridad y confianza sí es posible.<br>Un abrazo, Violeta Gil Pablo</p>
+    <div class="descarga-final">
+      <a class="boton linea" href="guia-7-semanas-correr.pdf" download>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+        Descargar la guía en PDF
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+document.documentElement.classList.add('js');
+const barra=document.getElementById('progreso');
+addEventListener('scroll',()=>{const h=document.documentElement;barra.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';},{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}}),{threshold:.15});
+document.querySelectorAll('.revela').forEach(el=>io.observe(el));
+
+// Tipos de tramo: a andar, s trote suave, m trote medio/carrera, z ritmo alegre/zona alta
+const S=[
+ {cal:'5–8 min',bloques:[
+  {n:'Bloque 1',seg:[['s',1],['a',2]],x:3,t:'1′ trote suave + 2′ andar rápido'},
+  {n:'Bloque 2',seg:[['m',2],['a',2]],x:3,t:'2′ trote medio + 2′ andar rápido'},
+  {n:'Bloque 3',seg:[['m',3],['a',1]],x:2,t:'3′ trote medio + 1′ andar'}]},
+ {cal:'5–8 min',bloques:[
+  {n:'Bloque 1',seg:[['s',2],['a',1]],x:4,t:'2′ trote suave + 1′ andar rápido'},
+  {n:'Bloque 2',seg:[['m',3],['a',1]],x:3,t:'3′ trote medio + 1′ andar'},
+  {n:'Bloque 3',seg:[['m',4],['a',1]],x:2,t:'4′ trote medio + 1′ andar'}]},
+ {cal:'5–8 min',bloques:[
+  {n:'Bloque 0',seg:[['s',2]],x:1,t:'2′ trote suave para ajustar el ritmo. 3–5 respiraciones profundas y amplias antes de empezar.'},
+  {n:'Bloque 1',seg:[['m',4],['a',1]],x:3,t:'4′ trote medio + 1′ andar. Controla respiración y ritmo.'},
+  {n:'Bloque 2',seg:[['m',6],['a',1]],x:2,t:'6′ trote medio + 1′ andar. Ritmo estable, sin apretar ni decaer.'},
+  {n:'Bloque 3',seg:[['a',2],['s',1]],x:1,t:'2′ andar + 1′ trote suave. Recuperación final progresiva.'}]},
+ {cal:'4–5 min',bloques:[
+  {n:'Bloque 0',seg:[['s',2]],x:1,t:'2′ trote suave + 3–5 respiraciones amplias.'},
+  {n:'Bloque 1',seg:[['m',5],['a',1]],x:2,t:'5′ trote medio + 1′ andar. Controla respiración y ritmo.'},
+  {n:'Bloque 2',seg:[['m',4],['z',1],['a',1]],x:3,t:'4′ carrera + 1′ ritmo alegre + 1′ andar. En el minuto «alegre» sube ligeramente la intensidad sin perder el control.'},
+  {n:'Bloque 3',seg:[['s',5]],x:1,t:'5′ trote suave continuo, recuperando poco a poco una respiración suave.'}]},
+ {cal:'4–5 min',bloques:[
+  {n:'Bloque 0',seg:[['s',2]],x:1,t:'2′ trote suave + 3–5 respiraciones amplias.'},
+  {n:'Bloque 1',seg:[['m',10]],x:1,t:'10′ carrera suave continua. Ritmo cómodo: «puedo hablar sin agobiarme».'},
+  {n:'Bloque 2',seg:[['a',2],['s',2]],x:3,t:'2′ andar + 2′ trote suave. Recupera y observa sensaciones.'},
+  {n:'Bloque 3',seg:[['m',9]],x:1,t:'8–10′ carrera continua. Ritmo fluido, sin apretar.'}]},
+ {cal:'5–8 min',bloques:[
+  {n:'Bloque 0',seg:[['s',2]],x:1,t:'2′ trote suave + 3–5 respiraciones amplias.'},
+  {n:'Bloque 1',seg:[['m',30],['z',2.5]],x:1,t:'30–35 min de carrera continua en Z2–3. Añade 2–3′ en Z4 al final si te sientes bien.'},
+  {n:'Bloque 2',opc:1,seg:[['a',2],['s',2]],x:3,t:'2′ andar + 2′ trote suave, o 4′ de trote muy suave respirando por la nariz.'}]},
+ {cal:'5–8 min',bloques:[
+  {n:'Bloque 0',seg:[['s',2]],x:1,t:'2′ trote suave + 3–5 respiraciones amplias.'},
+  {n:'Bloque 1',seg:[['m',27.5],['z',10]],x:1,t:'35–40 min de carrera continua. Si todo va bien, los últimos 10′ en Z3–4.'},
+  {n:'Bloque 2',opc:1,seg:[['a',1],['s',2]],x:3,t:'1′ andar + 2′ trote suave, o 5′ de trote muy suave respirando por la nariz.'}]}
+];
+// Carrera continua más larga de cada semana (lo que se va construyendo)
+const continua=S.map(s=>Math.max(...s.bloques.map(b=>b.seg.filter(g=>g[0]!=='a').reduce((m,g)=>m+g[1],0))));
+
+// Escalera: un escalón regular por semana
+const esc=document.getElementById('escalera'),maxC=Math.max(...continua);
+continua.forEach((c,i)=>{const d=document.createElement('div');d.className='escalon'+(i===0?' a':i===6?' z':'');d.innerHTML='<span>S'+(i+1)+'</span>';d.dataset.h=(16+84*i/6)+'%';esc.appendChild(d);});
+new IntersectionObserver((es,o)=>es.forEach(e=>{if(e.isIntersecting){[...esc.children].forEach((d,i)=>setTimeout(()=>{d.style.height=d.dataset.h;d.classList.add('on');},i*150));o.disconnect();}}),{threshold:.4}).observe(esc);
+
+// Semanas
+let hechas=[];try{hechas=JSON.parse(localStorage.getItem('vgp-correr-hechas')||'[]');}catch(e){}
+const guarda=()=>{try{localStorage.setItem('vgp-correr-hechas',JSON.stringify(hechas));}catch(e){}};
+const tabs=document.getElementById('semanas'),panel=document.getElementById('panel');
+const color={a:'var(--lila)',s:'var(--rosa)',m:'var(--vino)',z:'var(--oro)'};
+function barraHTML(b){let h='';for(let r=0;r<b.x;r++)b.seg.forEach(([t,m])=>h+='<i style="flex:'+m+';background:'+color[t]+'"></i>');return h;}
+function muestra(i){
+  [...tabs.children].forEach((b,k)=>{b.classList.toggle('on',k===i);b.setAttribute('aria-selected',k===i);});
+  const s=S[i];
+  panel.innerHTML='<div class="panel-cab"><h3>Semana '+(i+1)+'</h3><div class="minutos"><b>'+(i===5?'30–35′':i===6?'35–40′':i===4?'10′':Math.round(continua[i])+'′')+'</b><span>carrera continua más larga</span></div></div>'+
+    s.bloques.map(b=>'<div class="bloque"><div class="bloque-cab"><b>'+b.n+(b.opc?' <span class="opc">(opcional)</span>':'')+'</b>'+(b.x>1?'<span class="rep">×'+b.x+'</span>':'')+'</div><div class="barra">'+barraHTML(b)+'</div><p>'+b.t+'</p></div>').join('')+
+    '<div class="calma"><b>Vuelta a la calma · '+s.cal+'</b><br>Trota o camina suave 3–5′ según sensaciones, hasta recuperar la respiración nasal al 100%. Después, anda con respiraciones amplias y lentas (3×5) y termina con la reflexión: del 1 al 10, ¿cómo ha respondido tu cuerpo?</div>'+
+    '<label class="check"><input type="checkbox" id="hecha"'+(hechas.includes(i)?' checked':'')+'> He completado la semana '+(i+1)+'</label>';
+  document.getElementById('hecha').onchange=e=>{hechas=e.target.checked?[...new Set([...hechas,i])]:hechas.filter(x=>x!==i);guarda();pintaTabs();};
+}
+function pintaTabs(){[...tabs.children].forEach((b,k)=>b.classList.toggle('hecha',hechas.includes(k)));}
+S.forEach((_,i)=>{const b=document.createElement('button');b.type='button';b.setAttribute('role','tab');b.innerHTML='<small>Semana</small><b>'+(i+1)+'</b>';b.onclick=()=>muestra(i);tabs.appendChild(b);});
+pintaTabs();
+const siguiente=[0,1,2,3,4,5,6].find(i=>!hechas.includes(i));
+muestra(siguiente===undefined?6:siguiente);
+</script>
+</body>
+</html>
