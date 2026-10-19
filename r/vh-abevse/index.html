@@ -54,7 +54,9 @@ strong{color:var(--vino-osc)}
 .hero{padding:40px 0 70px;background:radial-gradient(70% 60% at 85% 10%,var(--lila) 0,transparent 70%),radial-gradient(60% 50% at 0% 100%,var(--lila-2) 0,transparent 70%)}
 .hero .logo{width:190px;margin:0 auto 22px}
 .gif-hero{width:100%;max-width:380px;height:auto;margin:0 auto 46px;border-radius:22px;box-shadow:0 20px 40px -26px rgba(94,53,66,.6);border:5px solid #fff}
-.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:center}
+.hero-grid{max-width:680px;margin:0 auto;text-align:center}
+.hero-grid .bajada{margin-left:auto;margin-right:auto}
+.hero-grid .meta{justify-content:center}
 .hero h1{font-size:clamp(36px,6.4vw,62px);font-weight:700;letter-spacing:-.5px}
 .hero h1 span{color:var(--vino)}
 .hero .bajada{font-size:18px;color:var(--suave);margin:18px 0 28px;max-width:470px}
@@ -236,23 +238,6 @@ details.pregunta .dentro{padding:0 22px 22px;font-size:15.5px}
         </a>
         <div class="meta"><span>⏱ Lectura de <b>7 minutos</b></span><span>✍️ Por <b>Violeta Gil Pablo</b></span></div>
       </div>
-      <!-- Ilustración: cerebro que manda la señal a la vejiga -->
-      <svg class="ilu-hero revela" viewBox="0 0 300 320" aria-hidden="true">
-        <circle cx="150" cy="160" r="140" fill="#f3e9ef"/>
-        <g class="pulso">
-          <path d="M150 42c-30 0-52 18-56 42-18 4-28 20-24 38 2 14 14 24 28 26 6 16 24 24 40 18 10 8 28 8 38-2 18 4 34-8 36-24 14-6 22-22 16-38-4-12-16-20-28-20-4-24-26-40-50-40z" fill="#d19c92"/>
-          <path d="M150 52v96M118 72c10 8 10 22 0 30M182 72c-10 8-10 22 0 30M108 118c14-2 24 6 26 18M192 118c-14-2-24 6-26 18" stroke="#784755" stroke-width="4" fill="none" stroke-linecap="round"/>
-        </g>
-        <path class="senal" d="M150 160C150 190 150 205 150 222" stroke="#784755" stroke-width="4" fill="none" stroke-linecap="round"/>
-        <g>
-          <path d="M108 238c0-14 18-20 42-20s42 6 42 20c0 30-18 50-42 50s-42-20-42-50z" fill="#efdb82" stroke="#784755" stroke-width="4"/>
-          <path d="M138 286l-6 22M162 286l6 22" stroke="#784755" stroke-width="4" stroke-linecap="round"/>
-          <path d="M122 256c10 6 46 6 56 0" stroke="#784755" stroke-width="3" fill="none" stroke-linecap="round" opacity=".5"/>
-        </g>
-        <g fill="#784755"><circle cx="232" cy="78" r="5"/><circle cx="248" cy="62" r="3.5"/><circle cx="62" cy="214" r="4"/></g>
-        <path d="M222 214l10-12M232 214l10-12" stroke="#c95f6c" stroke-width="4" stroke-linecap="round"/>
-        <text x="214" y="196" font-family="League Spartan,sans-serif" font-weight="700" font-size="20" fill="#c95f6c">¡!</text>
-      </svg>
     </div>
   </div>
 </header>
