@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Entendiendo mis ganas de hacer pis recurrentes | Violeta Gil Pablo</title>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="description" content="Guía para vejiga hiperactiva: entender por qué ocurre y cómo abordarla.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&family=Varela+Round&display=swap" rel="stylesheet">
+<style>
+:root{
+  --vino:#784755;
+  --vino-osc:#5e3542;
+  --oro:#efdb82;
+  --rosa:#d19c92;
+  --lila:#e8d7e2;
+  --lila-2:#f3e9ef;
+  --crema:#fffaf6;
+  --negro:#292929;
+  --texto:#3d2c33;
+  --suave:#7a6670;
+  --titulo:"League Spartan", sans-serif;
+  --cuerpo:"Varela Round", sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--cuerpo);background:var(--crema);color:var(--texto);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+
+/* barra de progreso de lectura */
+.progreso{position:fixed;top:0;left:0;height:4px;width:0;background:linear-gradient(90deg,var(--rosa),var(--vino));z-index:50}
+
+.ancho{max-width:880px;margin:0 auto;padding:0 22px}
+section{padding:84px 0}
+
+.etiqueta{display:inline-block;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--vino);background:var(--lila);border-radius:999px;padding:7px 16px;margin-bottom:18px}
+h1,h2,h3{font-family:var(--titulo);color:var(--vino-osc);line-height:1.12}
+h2{font-size:clamp(28px,5vw,42px);font-weight:600;margin-bottom:18px}
+h3{font-size:clamp(20px,3vw,24px);font-weight:600;margin-bottom:8px}
+p+p{margin-top:14px}
+.dorado{background:linear-gradient(transparent 58%,rgba(239,219,130,.75) 58%);padding:0 2px}
+strong{color:var(--vino-osc)}
+
+.boton{display:inline-flex;align-items:center;gap:10px;font-family:var(--cuerpo);font-weight:600;font-size:14.5px;letter-spacing:1.4px;text-transform:uppercase;text-decoration:none;color:var(--negro);background:var(--oro);border:1px solid var(--oro);border-radius:999px;padding:16px 28px;transition:all .2s;cursor:pointer}
+.boton:hover{background:var(--vino);border-color:var(--vino);color:#fff}
+.boton.linea{background:transparent;color:var(--vino);border-color:var(--vino)}
+.boton.linea:hover{background:var(--vino);color:#fff}
+.boton svg{width:18px;height:18px}
+
+/* ---------- Hero ---------- */
+.hero{padding:40px 0 70px;background:radial-gradient(70% 60% at 85% 10%,var(--lila) 0,transparent 70%),radial-gradient(60% 50% at 0% 100%,var(--lila-2) 0,transparent 70%)}
+.hero .logo{width:190px;margin:0 auto 46px}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:center}
+.hero h1{font-size:clamp(36px,6.4vw,62px);font-weight:700;letter-spacing:-.5px}
+.hero h1 span{color:var(--vino)}
+.hero .bajada{font-size:18px;color:var(--suave);margin:18px 0 28px;max-width:470px}
+.hero .meta{display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-top:18px;font-size:13.5px;color:var(--suave)}
+.hero .meta b{color:var(--vino)}
+.ilu-hero{width:100%;max-width:340px;margin:0 auto}
+.senal{stroke-dasharray:6 8;animation:fluye 1.6s linear infinite}
+@keyframes fluye{to{stroke-dashoffset:-28}}
+.pulso{transform-origin:center;animation:late 2.2s ease-in-out infinite}
+@keyframes late{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+
+/* ---------- Frase ---------- */
+.frase{background:var(--vino);color:#fff;text-align:center;padding:70px 0;position:relative;overflow:hidden}
+.frase blockquote{font-family:var(--titulo);font-size:clamp(25px,4.6vw,40px);line-height:1.2;font-weight:500;max-width:760px;margin:0 auto}
+.frase blockquote em{font-style:normal;color:var(--oro)}
+.frase .comilla{font-family:var(--titulo);font-size:150px;line-height:1;color:rgba(239,219,130,.2);position:absolute;top:-10px;left:6%}
+
+/* ---------- Carrusel ---------- */
+.carrusel-cab{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:26px}
+.carrusel-nav{display:flex;gap:10px}
+.carrusel-nav button{width:46px;height:46px;border-radius:50%;border:1px solid var(--vino);background:transparent;color:var(--vino);cursor:pointer;font-size:20px;transition:all .2s}
+.carrusel-nav button:hover{background:var(--vino);color:#fff}
+.carrusel{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 22px 18px;margin:0 -22px;scrollbar-width:none}
+.carrusel::-webkit-scrollbar{display:none}
+.tarjeta{flex:0 0 min(78%,330px);scroll-snap-align:start;background:var(--vino);color:#fff;border-radius:22px;padding:28px 24px 24px;min-height:360px;display:flex;flex-direction:column;position:relative;box-shadow:0 14px 30px -18px rgba(94,53,66,.7)}
+.tarjeta .num{font-family:var(--titulo);font-size:13px;letter-spacing:2px;color:rgba(255,255,255,.55);margin-bottom:12px}
+.tarjeta h3{color:var(--oro);font-size:23px}
+.tarjeta p{font-size:15px;color:rgba(255,255,255,.88);margin-top:8px}
+.tarjeta .ico{margin-top:auto;padding-top:16px;height:118px;display:flex;align-items:flex-end;justify-content:center}
+.tarjeta .ico svg{height:100%;width:auto}
+.tarjeta.oro{background:var(--oro);color:var(--negro)}
+.tarjeta.oro h3{color:var(--vino-osc)}
+.tarjeta.oro p,.tarjeta.oro .num{color:var(--texto)}
+.tarjeta ul{list-style:none;margin-top:6px}
+.tarjeta li{font-size:14.5px;padding-left:18px;position:relative;margin-top:9px;color:rgba(255,255,255,.9)}
+.tarjeta li::before{content:"";position:absolute;left:0;top:9px;width:7px;height:7px;border-radius:50%;background:var(--oro)}
+.puntos{display:flex;gap:7px;justify-content:center;margin-top:6px}
+.puntos span{width:7px;height:7px;border-radius:50%;background:var(--lila);transition:all .25s}
+.puntos span.on{background:var(--vino);width:22px;border-radius:5px}
+
+/* ---------- Escala interactiva ---------- */
+.escala-caja{background:#fff;border:1px solid var(--lila);border-radius:26px;padding:34px 30px;box-shadow:0 24px 50px -36px rgba(94,53,66,.6)}
+.escala-top{display:flex;align-items:center;gap:24px;margin-bottom:22px}
+.medidor{flex:0 0 auto;width:118px;height:118px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--c,#9cc5a1) calc(var(--p,50)*1%),var(--lila-2) 0);transition:background .3s}
+.medidor div{width:92px;height:92px;border-radius:50%;background:#fff;display:grid;place-items:center;font-family:var(--titulo);font-size:42px;font-weight:700;color:var(--vino-osc)}
+.estado h3{margin-bottom:4px}
+.estado p{color:var(--suave);font-size:15px}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:14px;border-radius:999px;background:linear-gradient(90deg,#a9d3ae 0%,#f2e18f 45%,#f0b38b 72%,#c95f6c 100%);outline:none;margin:6px 0}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:34px;height:34px;border-radius:50%;background:#fff;border:4px solid var(--vino);box-shadow:0 4px 12px rgba(0,0,0,.18);cursor:grab}
+input[type=range]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;background:#fff;border:4px solid var(--vino);cursor:grab}
+.escala-marcas{display:flex;justify-content:space-between;font-size:12px;color:var(--suave);margin-top:4px}
+.consejo{margin-top:24px;border-radius:18px;padding:20px 22px;background:var(--lila-2);border-left:4px solid var(--vino)}
+.consejo b{display:block;font-family:var(--titulo);font-size:18px;color:var(--vino-osc);margin-bottom:4px}
+
+.pasos{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:30px}
+.paso{background:#fff;border:1px solid var(--lila);border-radius:20px;padding:22px 20px;display:flex;gap:16px}
+.paso .n{flex:0 0 auto;width:42px;height:42px;border-radius:50%;background:var(--oro);display:grid;place-items:center;font-family:var(--titulo);font-weight:700;font-size:19px;color:var(--vino-osc)}
+.paso h3{font-size:19px;margin-bottom:4px}
+.paso p{font-size:15px;color:var(--suave)}
+.nota{margin-top:20px;font-size:15px;color:var(--suave);text-align:center}
+
+/* ---------- Inercia ---------- */
+.fondo-lila{background:var(--lila-2)}
+.versus{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:28px 0}
+.vs{border-radius:22px;padding:26px 24px}
+.vs.antes{background:#fff;border:1px dashed var(--rosa)}
+.vs.ahora{background:var(--vino);color:#fff}
+.vs.ahora h3{color:var(--oro)}
+.vs h3{display:flex;align-items:center;gap:10px}
+.vs ul{list-style:none;margin-top:10px}
+.vs li{padding-left:28px;position:relative;margin-top:10px;font-size:15.5px}
+.vs.antes li::before{content:"✕";position:absolute;left:0;color:var(--rosa);font-weight:700}
+.vs.ahora li::before{content:"✓";position:absolute;left:0;color:var(--oro);font-weight:700}
+.mantra{text-align:center;font-family:var(--titulo);font-size:clamp(22px,4vw,30px);color:var(--vino-osc);margin:34px auto 10px;max-width:640px}
+.mantra span{display:inline-block;background:var(--oro);padding:4px 14px;border-radius:12px;transform:rotate(-1.5deg)}
+.apoyos{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
+.apoyo{background:#fff;border-radius:18px;padding:20px 18px;text-align:center}
+.apoyo svg{height:56px;margin:0 auto 10px}
+.apoyo b{display:block;font-family:var(--titulo);font-size:17px;color:var(--vino-osc)}
+.apoyo span{font-size:14px;color:var(--suave)}
+
+/* ---------- Diario ---------- */
+.diario-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:30px;align-items:start}
+.anota{list-style:none}
+.anota li{display:flex;gap:14px;align-items:flex-start;margin-bottom:16px}
+.anota .ic{flex:0 0 auto;width:46px;height:46px;border-radius:14px;background:var(--lila);display:grid;place-items:center}
+.anota .ic svg{width:26px;height:26px}
+.libreta{background:#fff;border-radius:18px;box-shadow:0 22px 46px -30px rgba(94,53,66,.55);overflow:hidden;border:1px solid var(--lila)}
+.libreta-cab{background:var(--vino);color:#fff;padding:12px 18px;font-family:var(--titulo);display:flex;justify-content:space-between;font-size:15px}
+.libreta table{width:100%;border-collapse:collapse;font-size:13.5px}
+.libreta th{font-weight:600;text-align:left;color:var(--vino);padding:10px 12px;background:var(--lila-2);font-size:12px;letter-spacing:.5px;text-transform:uppercase}
+.libreta td{padding:10px 12px;border-top:1px solid var(--lila-2)}
+.chip{display:inline-block;font-size:12px;border-radius:999px;padding:2px 9px;background:var(--lila-2);color:var(--vino)}
+.chip.u{background:#f7d9cf;color:#a2453d}
+.dias{display:flex;gap:5px;flex-wrap:wrap;margin-top:22px}
+.dias span{width:26px;height:26px;border-radius:8px;background:var(--lila);font-size:11px;display:grid;place-items:center;color:var(--vino);transition:background .3s,color .3s}
+.dias span.hecho{background:var(--vino);color:#fff}
+.aviso{margin-top:26px;display:flex;gap:14px;align-items:flex-start;background:#fff4c9;border-radius:18px;padding:18px 20px;font-size:15px}
+.aviso svg{flex:0 0 auto;width:30px;height:30px}
+
+/* ---------- Microbiota ---------- */
+.cadena{display:flex;flex-direction:column;gap:0;margin:34px auto 10px;max-width:560px}
+.eslabon{background:#fff;border:1px solid var(--lila);border-radius:18px;padding:16px 20px;display:flex;gap:16px;align-items:center}
+.eslabon .bola{flex:0 0 auto;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--lila)}
+.eslabon .bola svg{width:26px;height:26px}
+.eslabon b{font-family:var(--titulo);font-size:17px;color:var(--vino-osc);display:block}
+.eslabon span{font-size:14px;color:var(--suave)}
+.flecha{height:30px;width:2px;background:repeating-linear-gradient(var(--vino) 0 5px,transparent 5px 10px);margin:0 auto;position:relative}
+.flecha::after{content:"";position:absolute;bottom:-2px;left:-5px;border:6px solid transparent;border-top-color:var(--vino)}
+.eslabon.final{background:var(--vino);border-color:var(--vino)}
+.eslabon.final b{color:var(--oro)}
+.eslabon.final span{color:rgba(255,255,255,.85)}
+details.pregunta{background:#fff;border:1px solid var(--lila);border-radius:18px;margin-top:16px}
+details.pregunta summary{list-style:none;cursor:pointer;padding:18px 22px;font-family:var(--titulo);font-size:19px;color:var(--vino-osc);display:flex;justify-content:space-between;gap:14px;align-items:center}
+details.pregunta summary::-webkit-details-marker{display:none}
+details.pregunta summary::after{content:"+";font-size:26px;color:var(--vino);transition:transform .25s}
+details.pregunta[open] summary::after{transform:rotate(45deg)}
+details.pregunta .dentro{padding:0 22px 22px;font-size:15.5px}
+.factores{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.factores span{background:#fff;border:1px solid var(--lila);border-radius:999px;padding:9px 16px;font-size:14px}
+.biblio{margin-top:30px;font-size:12.5px;color:var(--suave);border-top:1px solid var(--lila);padding-top:16px}
+.biblio p+p{margin-top:6px}
+
+/* ---------- Sobre mí ---------- */
+.sobre{display:grid;grid-template-columns:.8fr 1.2fr;gap:36px;align-items:center}
+.sobre .foto{border-radius:26px;overflow:hidden;transform:rotate(-2deg);box-shadow:0 26px 50px -30px rgba(94,53,66,.7);border:6px solid #fff}
+.redes{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:34px}
+.red{background:#fff;border:1px solid var(--lila);border-radius:18px;padding:18px 14px;text-decoration:none;text-align:center;transition:transform .2s,border-color .2s}
+.red:hover{transform:translateY(-4px);border-color:var(--vino)}
+.red svg{width:30px;height:30px;margin:0 auto 8px;color:var(--vino)}
+.red b{display:block;font-family:var(--titulo);color:var(--vino-osc);font-size:16px}
+.red span{font-size:12.5px;color:var(--suave);line-height:1.4;display:block;margin-top:4px}
+
+/* ---------- Cierre ---------- */
+.cierre{background:var(--vino);color:#fff;text-align:center;border-radius:34px 34px 0 0}
+.cierre h2{color:#fff}
+.cierre p{color:rgba(255,255,255,.88);max-width:600px;margin-left:auto;margin-right:auto}
+.cierre .grande{font-family:var(--titulo);font-size:clamp(20px,3.4vw,26px);color:var(--oro);margin:26px auto}
+.cierre .botones{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:28px}
+.cierre .boton.linea{color:#fff;border-color:rgba(255,255,255,.6)}
+.cierre .boton.linea:hover{background:#fff;color:var(--vino)}
+.firma{margin-top:40px;font-size:14px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.7)}
+.descarga-final{margin-top:46px;padding-top:30px;border-top:1px solid rgba(255,255,255,.15)}
+
+/* revelado al hacer scroll (solo si hay JS) */
+.js .revela{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.js .revela.visible{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js .revela{opacity:1;transform:none;transition:none}.senal,.pulso{animation:none}html{scroll-behavior:auto}}
+
+@media (max-width:760px){
+  body{font-size:16px}
+  section{padding:64px 0}
+  .hero-grid,.diario-grid,.sobre{grid-template-columns:1fr}
+  .ilu-hero{max-width:250px;order:-1}
+  .pasos,.versus{grid-template-columns:1fr}
+  .apoyos{grid-template-columns:1fr}
+  .redes{grid-template-columns:repeat(2,1fr)}
+  .escala-top{flex-direction:column;text-align:center}
+  .sobre .foto{max-width:300px;margin:0 auto}
+}
+</style>
+</head>
+<body>
+<div class="progreso" id="progreso"></div>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="ancho">
+    <img class="logo" src="../../logo-violeta.png" alt="Violeta Gil Pablo">
+    <div class="hero-grid">
+      <div class="revela">
+        <span class="etiqueta">Guía · Vejiga hiperactiva</span>
+        <h1>Entendiendo mis <span>ganas de hacer pis</span> recurrentes</h1>
+        <p class="bajada">Entiende por qué aparecen esas ganas que no te dejan tranquila y cómo empezar a reeducarlas, paso a paso.</p>
+        <a class="boton" href="guia-ganas-de-hacer-pis.pdf" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+          Descargar la guía en PDF
+        </a>
+        <div class="meta"><span>⏱ Lectura de <b>7 minutos</b></span><span>✍️ Por <b>Violeta Gil Pablo</b></span></div>
+      </div>
+      <!-- Ilustración: cerebro que manda la señal a la vejiga -->
+      <svg class="ilu-hero revela" viewBox="0 0 300 320" aria-hidden="true">
+        <circle cx="150" cy="160" r="140" fill="#f3e9ef"/>
+        <g class="pulso">
+          <path d="M150 42c-30 0-52 18-56 42-18 4-28 20-24 38 2 14 14 24 28 26 6 16 24 24 40 18 10 8 28 8 38-2 18 4 34-8 36-24 14-6 22-22 16-38-4-12-16-20-28-20-4-24-26-40-50-40z" fill="#d19c92"/>
+          <path d="M150 52v96M118 72c10 8 10 22 0 30M182 72c-10 8-10 22 0 30M108 118c14-2 24 6 26 18M192 118c-14-2-24 6-26 18" stroke="#784755" stroke-width="4" fill="none" stroke-linecap="round"/>
+        </g>
+        <path class="senal" d="M150 160C150 190 150 205 150 222" stroke="#784755" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <g>
+          <path d="M108 238c0-14 18-20 42-20s42 6 42 20c0 30-18 50-42 50s-42-20-42-50z" fill="#efdb82" stroke="#784755" stroke-width="4"/>
+          <path d="M138 286l-6 22M162 286l6 22" stroke="#784755" stroke-width="4" stroke-linecap="round"/>
+          <path d="M122 256c10 6 46 6 56 0" stroke="#784755" stroke-width="3" fill="none" stroke-linecap="round" opacity=".5"/>
+        </g>
+        <g fill="#784755"><circle cx="232" cy="78" r="5"/><circle cx="248" cy="62" r="3.5"/><circle cx="62" cy="214" r="4"/></g>
+        <path d="M222 214l10-12M232 214l10-12" stroke="#c95f6c" stroke-width="4" stroke-linecap="round"/>
+        <text x="214" y="196" font-family="League Spartan,sans-serif" font-weight="700" font-size="20" fill="#c95f6c">¡!</text>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<!-- ============ FRASE ============ -->
+<section class="frase">
+  <span class="comilla" aria-hidden="true">“</span>
+  <div class="ancho revela">
+    <blockquote>Las ganas siempre son <em>reales</em>. Pero no siempre la razón es que tu vejiga esté <em>llena</em>.</blockquote>
+  </div>
+</section>
+
+<!-- ============ POR QUÉ OCURRE (carrusel) ============ -->
+<section>
+  <div class="ancho">
+    <div class="carrusel-cab revela">
+      <div>
+        <span class="etiqueta">Vamos a entender por qué ocurre</span>
+        <h2>Tu cerebro también decide <span class="dorado">cuándo tienes ganas</span></h2>
+      </div>
+      <div class="carrusel-nav">
+        <button type="button" id="ant" aria-label="Tarjeta anterior">←</button>
+        <button type="button" id="sig" aria-label="Tarjeta siguiente">→</button>
+      </div>
+    </div>
+    <div class="carrusel" id="carrusel">
+      <article class="tarjeta">
+        <span class="num">01 / 08</span>
+        <h3>Solo hay unas ganas de hacer pis: las reales</h3>
+        <p>No existen ganas “de mentira”. Lo que sientes, lo sientes de verdad.</p>
+        <div class="ico"><svg viewBox="0 0 120 110"><path d="M18 48c0-12 18-18 42-18s42 6 42 18c0 30-18 50-42 50S18 78 18 48z" fill="#efdb82" stroke="#fff" stroke-width="4"/><path d="M48 98l-6 10M72 98l6 10" stroke="#fff" stroke-width="4" stroke-linecap="round"/><circle cx="48" cy="58" r="4" fill="#5e3542"/><circle cx="72" cy="58" r="4" fill="#5e3542"/><path d="M50 74c6 5 14 5 20 0" stroke="#5e3542" stroke-width="3" fill="none" stroke-linecap="round"/></svg></div>
+      </article>
+      <article class="tarjeta oro">
+        <span class="num">02 / 08</span>
+        <h3>¡Las ganas son siempre reales!</h3>
+        <p>¿Podrías diferenciar lo que sientes cuando haces pis después de 5 horas… o después de 1? Aunque la razón no siempre es que tu vejiga esté llena.</p>
+        <div class="ico"><svg viewBox="0 0 150 110"><path d="M20 14h104a12 12 0 0 1 12 12v44a12 12 0 0 1-12 12H62l-24 20 4-20H20A12 12 0 0 1 8 70V26a12 12 0 0 1 12-12z" fill="#fff" stroke="#5e3542" stroke-width="4" stroke-linejoin="round"/><text x="72" y="46" text-anchor="middle" font-family="League Spartan,sans-serif" font-weight="700" font-size="21" fill="#5e3542">¡ME MEO!</text><text x="72" y="68" text-anchor="middle" font-family="League Spartan,sans-serif" font-weight="600" font-size="14" fill="#784755">DE VERDAD</text></svg></div>
+      </article>
+      <article class="tarjeta">
+        <span class="num">03 / 08</span>
+        <h3>El cerebro interpreta señales del entorno</h3>
+        <p>Y si evalúa que es necesario, activa las ganas de ir al baño.</p>
+        <div class="ico"><svg viewBox="0 0 120 110"><rect x="38" y="70" width="44" height="30" rx="6" fill="#d19c92"/><path d="M42 72a18 18 0 0 1 36 0" fill="#e85d6a"/><circle cx="60" cy="62" r="7" fill="#fff" opacity=".85"/><path d="M60 22v12M30 34l9 9M90 34l-9 9M20 60h12M88 60h12" stroke="#efdb82" stroke-width="5" stroke-linecap="round"/></svg></div>
+      </article>
+      <article class="tarjeta">
+        <span class="num">04 / 08</span>
+        <h3>No solo pasa con la vejiga llena</h3>
+        <p>Hay situaciones que activan estas señales sin necesidad fisiológica real: ver una taza de váter, antes de un WOD o de un viaje largo pueden activar el “me meo”.</p>
+        <div class="ico"><svg viewBox="0 0 170 110"><g transform="translate(6 18)"><rect x="6" y="0" width="34" height="30" rx="6" fill="#fff"/><path d="M0 38h56c0 18-12 30-28 30S0 56 0 38z" fill="#fff"/><rect x="20" y="66" width="16" height="22" rx="4" fill="#fff"/><ellipse cx="28" cy="40" rx="20" ry="5" fill="#d19c92"/></g><g transform="translate(96 16)"><circle cx="34" cy="44" r="32" fill="#fff"/><circle cx="34" cy="44" r="26" fill="none" stroke="#d19c92" stroke-width="3"/><path d="M34 44V26M34 44l12 8" stroke="#784755" stroke-width="4" stroke-linecap="round"/><rect x="27" y="2" width="14" height="9" rx="3" fill="#fff"/><path d="M58 16l7-7" stroke="#e85d6a" stroke-width="5" stroke-linecap="round"/></g></svg></div>
+      </article>
+      <article class="tarjeta oro">
+        <span class="num">05 / 08</span>
+        <h3>Imagina llevar un traje difícil de quitar</h3>
+        <p>¿No te parece lógico sentir ganas repentinas de hacer pis? El entorno no le da a tu cerebro la seguridad de poder ir al baño cuando quiera, y se adelanta.</p>
+        <div class="ico"><svg viewBox="0 0 120 110"><circle cx="60" cy="30" r="20" fill="#fff" stroke="#5e3542" stroke-width="4"/><circle cx="53" cy="28" r="3" fill="#5e3542"/><circle cx="67" cy="28" r="3" fill="#5e3542"/><path d="M53 39c4-3 10-3 14 0" stroke="#5e3542" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M30 104V66c0-10 14-16 30-16s30 6 30 16v38" fill="#784755"/><path d="M34 62h52M34 76h52M34 90h52" stroke="#d19c92" stroke-width="4"/><path d="M60 50v54" stroke="#efdb82" stroke-width="4" stroke-dasharray="4 5"/></svg></div>
+      </article>
+      <article class="tarjeta">
+        <span class="num">06 / 08</span>
+        <h3>Las sientes en la vejiga, pero se generan en el cerebro</h3>
+        <p>El cerebro evalúa con la información que ha ido validando a lo largo de la vida. Ha aprendido a dar una respuesta “urgente” en situaciones parecidas, aunque no siempre sea necesaria.</p>
+        <div class="ico"><svg viewBox="0 0 120 110"><path d="M60 8c-20 0-34 12-36 28-12 3-18 13-16 25 2 10 10 16 20 17 4 11 16 16 26 12 7 5 18 5 25-1 12 3 22-5 24-16 9-4 14-15 10-25-3-8-11-13-19-13C91 18 78 8 60 8z" fill="#d19c92"/><path d="M60 14v62M40 30c6 5 6 14 0 19M80 30c-6 5-6 14 0 19" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M60 82v20" stroke="#efdb82" stroke-width="4" stroke-dasharray="4 4"/></svg></div>
+      </article>
+      <article class="tarjeta oro">
+        <span class="num">07 / 08</span>
+        <h3>Solución: reprogramar</h3>
+        <ul style="color:var(--texto)">
+          <li style="color:var(--texto)">Acepta que no siempre que sientas ganas tu vejiga está llena. Eso ya empieza a modificar la evaluación de tu cerebro.</li>
+          <li style="color:var(--texto)">Crea experiencias nuevas que no confirmen lo que tu cerebro cree (“si no meo antes del WOD, me entrarán a mitad”).</li>
+        </ul>
+      </article>
+      <article class="tarjeta">
+        <span class="num">08 / 08</span>
+        <h3>¿Cómo?</h3>
+        <ul>
+          <li>Evita al máximo “mear por inercia”.</li>
+          <li>Re-evalúa dos veces si son ganas fisiológicas. Si has meado hace 30 minutos, probablemente no lo son, aunque la sensación sea la misma.</li>
+          <li>Si la urgencia no es muy intensa, no vayas: céntrate en otra tarea que te pida atención un rato. <b style="color:var(--oro)">Foco externo.</b></li>
+        </ul>
+      </article>
+    </div>
+    <div class="puntos" id="puntos" aria-hidden="true"></div>
+    <p class="nota revela">Ahora lo vamos a ver en profundidad…</p>
+  </div>
+</section>
+
+<!-- ============ REEDUCAR LA URGENCIA ============ -->
+<section class="fondo-lila">
+  <div class="ancho">
+    <div class="revela">
+      <span class="etiqueta">Paso 1</span>
+      <h2>Reeducar la urgencia</h2>
+      <p>Igual que tu cerebro aprendió a activar la señal de urgencia demasiado pronto, <strong>puede aprender a gestionarla de otra forma</strong>. La clave está en darle experiencias nuevas: momentos en los que no vas al baño enseguida… y ves que no pasa nada.</p>
+    </div>
+
+    <div class="escala-caja revela" style="margin-top:34px">
+      <p style="font-family:var(--titulo);font-size:15px;letter-spacing:2px;text-transform:uppercase;color:var(--vino);margin-bottom:18px">Prueba la escala: ¿cuántas ganas tienes ahora mismo?</p>
+      <div class="escala-top">
+        <div class="medidor" id="medidor"><div id="numero">6</div></div>
+        <div class="estado"><h3 id="estadoTitulo">Zona de entrenamiento</h3><p id="estadoTexto">Aquí es donde se reeduca la urgencia.</p></div>
+      </div>
+      <input type="range" id="escala" min="0" max="10" step="1" value="6" aria-label="Nivel de ganas de hacer pis del 0 al 10">
+      <div class="escala-marcas"><span>0 · sin ganas</span><span>5</span><span>10 · no aguanto más</span></div>
+      <div class="consejo" id="consejo"></div>
+    </div>
+
+    <h3 class="revela" style="margin-top:46px;text-align:center">Si estás entre un 5 y un 7, prueba esto</h3>
+    <div class="pasos">
+      <div class="paso revela"><span class="n">1</span><div><h3>Respira</h3><p>Lento y profundo.</p></div></div>
+      <div class="paso revela"><span class="n">2</span><div><h3>Cambia el foco</h3><p>Evita el hiperfoco cuanto antes. Haz algo que te pida atención plena y un rato “medio-largo”: escribir un mensaje, doblar la ropa, preparar la mochila…</p></div></div>
+      <div class="paso revela"><span class="n">3</span><div><h3>Retrasa unos minutos</h3><p>Aunque sean solo 3–5 minutos. Cuanto más, mejor.</p></div></div>
+      <div class="paso revela"><span class="n">4</span><div><h3>Si estás entrenando</h3><p>Con las ganas en un 6–7, empieza el bloque que te toque. Si suben, siempre podrías acabar yendo, pero respeta y no vayas.</p></div></div>
+    </div>
+    <p class="nota revela">Si tus ganas no pasan por el 6–7 y saltan directamente al 8, inténtalo igualmente, a ver si bajan con la actividad. <strong>Cuanto más practiques este retraso controlado, más se regula la respuesta de tu cerebro.</strong></p>
+  </div>
+</section>
+
+<!-- ============ MEAR POR INERCIA ============ -->
+<section>
+  <div class="ancho">
+    <div class="revela">
+      <span class="etiqueta">Paso 2</span>
+      <h2>Evitar “mear por inercia” y crear nuevas asociaciones</h2>
+      <p>Muchas veces hacemos pis <strong>“por si acaso”</strong>: antes de salir, antes de entrenar, antes de dormir… Pero eso refuerza el mensaje de que, siempre que aparece la sensación, hay que ir corriendo al baño.</p>
+    </div>
+    <div class="versus">
+      <div class="vs antes revela">
+        <h3>Por inercia</h3>
+        <ul><li>Voy “por si acaso” antes de salir.</li><li>Meo justo antes de cada WOD.</li><li>En cuanto noto algo, voy corriendo.</li></ul>
+      </div>
+      <div class="vs ahora revela">
+        <h3>En su lugar</h3>
+        <ul><li>Evalúo con la escala si de verdad lo necesito.</li><li>Si no estoy en un nivel alto, aplico el paso 1.</li><li>Cuando lo consigo, lo registro mentalmente, varias veces.</li></ul>
+      </div>
+    </div>
+    <p class="mantra revela"><span>“He esperado y no ha pasado nada.”</span></p>
+    <p class="nota revela">Cada una de esas experiencias le enseña a tu cerebro que puede tolerar la sensación sin riesgo. Y cuando vuelva a ocurrir, podrás recurrir a esa experiencia.</p>
+
+    <h3 class="revela" style="margin-top:44px">Pequeños apoyos en tus picos</h3>
+    <p class="revela" style="color:var(--suave);font-size:15px">Para los momentos en los que más tiendes a ir al baño: antes de entrenar, por las mañanas… (enseguida verás cómo detectarlos).</p>
+    <div class="apoyos">
+      <div class="apoyo revela"><svg viewBox="0 0 64 64"><path d="M14 22h30v20a12 12 0 0 1-12 12h-6a12 12 0 0 1-12-12z" fill="#efdb82" stroke="#784755" stroke-width="3"/><path d="M44 28h4a7 7 0 0 1 0 14h-4" fill="none" stroke="#784755" stroke-width="3"/><path d="M24 8c-3 4 3 6 0 10M32 8c-3 4 3 6 0 10" stroke="#d19c92" stroke-width="3" stroke-linecap="round" fill="none"/><path d="M8 58L56 10" stroke="#c95f6c" stroke-width="4" stroke-linecap="round"/></svg><b>Menos cafeína</b><span>Si notas más urgencia en ciertos momentos.</span></div>
+      <div class="apoyo revela"><svg viewBox="0 0 64 64"><path d="M32 54c-14-8-22-17-22-28a11 11 0 0 1 22-4 11 11 0 0 1 22 4c0 11-8 20-22 28z" fill="#d19c92"/><path d="M18 32h8l4-8 5 14 4-6h7" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Más calma</b><span>La urgencia aumenta con el estrés y las prisas, sobre todo en esos picos.</span></div>
+      <div class="apoyo revela"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="22" fill="none" stroke="#efdb82" stroke-width="6"/><circle cx="32" cy="32" r="12" fill="#784755"/><path d="M32 4v8M32 52v8M4 32h8M52 32h8" stroke="#d19c92" stroke-width="3" stroke-linecap="round"/></svg><b>Respiración 360º</b><span>Muévete y respira para liberar tensión en la zona pélvica.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DIARIO MICCIONAL ============ -->
+<section class="fondo-lila">
+  <div class="ancho">
+    <div class="revela">
+      <span class="etiqueta">Paso 3</span>
+      <h2>Diario miccional: tu herramienta de autoconocimiento</h2>
+    </div>
+    <div class="diario-grid">
+      <div class="revela">
+        <p style="margin-bottom:18px">Durante <strong>15 días</strong>, anota:</p>
+        <ul class="anota">
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#784755" stroke-width="2" stroke-linecap="round"><path d="M7 4h10l-1.5 16h-7z"/><path d="M8 9h8"/></svg></span><div><b>Qué bebes y cuánto.</b></div></li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#784755" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></span><div><b>A qué hora haces pis</b> y cuánta cantidad, aproximada.</div></li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#784755" stroke-width="2" stroke-linecap="round"><path d="M12 3l9 16H3z"/><path d="M12 10v4M12 17h.01"/></svg></span><div><b>Si hubo urgencia o pérdidas</b> y en qué contexto: risa, ejercicio, antes de llegar al baño…</div></li>
+        </ul>
+        <p style="font-size:15.5px">Así verás patrones: horarios o situaciones donde aparece más la urgencia, o si hay “mear por rutina”. Con esos datos eliges <strong>en qué momentos practicar el retraso</strong> o ajustar tus hábitos.</p>
+        <div class="dias" id="dias" aria-hidden="true"></div>
+      </div>
+      <div class="libreta revela" role="img" aria-label="Ejemplo de un día de diario miccional">
+        <div class="libreta-cab"><span>Diario miccional</span><span>Día 1</span></div>
+        <table>
+          <thead><tr><th>Hora</th><th>Bebo</th><th>Pis</th><th>Contexto</th></tr></thead>
+          <tbody>
+            <tr><td>07:30</td><td>Café 200 ml</td><td>—</td><td><span class="chip">Al despertar</span></td></tr>
+            <tr><td>08:10</td><td>—</td><td>Mucho</td><td><span class="chip">Normal</span></td></tr>
+            <tr><td>09:00</td><td>Agua 300 ml</td><td>Poco</td><td><span class="chip u">Urgencia · antes del WOD</span></td></tr>
+            <tr><td>11:45</td><td>—</td><td>Normal</td><td><span class="chip">Normal</span></td></tr>
+            <tr><td>14:20</td><td>Agua 400 ml</td><td>—</td><td><span class="chip">Comida</span></td></tr>
+            <tr><td>15:10</td><td>—</td><td>Poco</td><td><span class="chip u">Por si acaso, al salir</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="aviso revela">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#784755" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+      <p>Durante todo el proceso evitaremos el <strong>hiperfoco</strong>: pensar mucho en ello o quedarte ahí mucho rato aumenta las ganas de ir al baño. Si pones el foco, por ejemplo para rellenar el diario, enseguida lo cambias.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MICROBIOTA ============ -->
+<section>
+  <div class="ancho">
+    <div class="revela">
+      <span class="etiqueta">Para ir más allá</span>
+      <h2>Sistema inmune, microbiota y vejiga hiperactiva</h2>
+      <p>La evidencia actual muestra que <strong>la vejiga no es un órgano estéril</strong>: alberga una microbiota urinaria que interactúa con el sistema inmunitario y el sistema nervioso. En mujeres con vejiga hiperactiva se ha observado menor diversidad microbiana y más predisposición a la disbiosis, incluso sin infección urinaria activa.</p>
+    </div>
+
+    <div class="cadena">
+      <div class="eslabon revela"><span class="bola"><svg viewBox="0 0 24 24" fill="#784755"><circle cx="7" cy="8" r="3"/><circle cx="16" cy="7" r="2"/><circle cx="14" cy="15" r="3.5"/><circle cx="6" cy="17" r="2"/></svg></span><div><b>Microbiota alterada</b><span>Una alteración bacteriana en la uretra o la vejiga.</span></div></div>
+      <div class="flecha"></div>
+      <div class="eslabon revela"><span class="bola"><svg viewBox="0 0 24 24" fill="none" stroke="#784755" stroke-width="2" stroke-linecap="round"><path d="M12 3c3 4 6 7 6 11a6 6 0 0 1-12 0c0-4 3-7 6-11z"/></svg></span><div><b>Inflamación de bajo grado</b><span>Crónica y “silenciosa”, sin signos claros de infección.</span></div></div>
+      <div class="flecha"></div>
+      <div class="eslabon revela"><span class="bola"><svg viewBox="0 0 24 24" fill="none" stroke="#784755" stroke-width="2" stroke-linecap="round"><path d="M3 12h4l3-7 4 14 3-7h4"/></svg></span><div><b>Nervios de la vejiga más sensibles</b><span>Las vías que informan del llenado se sensibilizan.</span></div></div>
+      <div class="flecha"></div>
+      <div class="eslabon final revela"><span class="bola" style="background:var(--oro)"><svg viewBox="0 0 24 24" fill="none" stroke="#784755" stroke-width="2.2" stroke-linecap="round"><path d="M12 2v6M12 22v-4M4.9 4.9l2.8 2.8M19.1 4.9l-2.8 2.8"/><circle cx="12" cy="14" r="4"/></svg></span><div><b>Vejiga que avisa antes de tiempo</b><span>El detrusor se activa con poco llenado: urgencia y, a veces, incontinencia de urgencia.</span></div></div>
+    </div>
+
+    <details class="pregunta revela">
+      <summary>¿Qué significa esto, Violeta?</summary>
+      <div class="dentro">
+        <p>Una alteración bacteriana en la uretra podría tener un papel importante en el desarrollo del síndrome de vejiga hiperactiva.</p>
+        <p><strong>¿Por qué?</strong> Estas alteraciones pueden generar una inflamación crónica de bajo grado que sensibiliza las vías aferentes de la vejiga y favorece la hiperactividad del músculo detrusor (el encargado de almacenar y vaciar la orina). Como consecuencia, la vejiga responde de forma anticipada ante volúmenes bajos de llenado.</p>
+        <p>Esto <strong>no implica necesariamente una infección urinaria activa</strong>: puede haber cambios microbianos y activación inmunitaria local sin signos clínicos claros. Es lo que a veces se llama “inflamación silenciosa”.</p>
+      </div>
+    </details>
+
+    <h3 class="revela" style="margin-top:40px">¿Qué puede influir en tu microbiota y en tu sistema inmune?</h3>
+    <div class="factores revela">
+      <span>😮‍💨 Estrés mantenido</span><span>😴 Descanso insuficiente</span><span>🥗 Alimentación</span><span>🌙 Cambios hormonales</span><span>💊 Uso previo de antibióticos</span><span>🔥 Inflamación sistémica de bajo grado</span>
+    </div>
+    <p class="nota revela" style="text-align:left">Estos factores pueden influir tanto en la microbiota como en la respuesta del sistema inmune, favoreciendo un estado de mayor reactividad de la vejiga.</p>
+
+    <div class="biblio">
+      <p>Sze, C. et al. “The gut, vaginal, and urine microbiome in overactive bladder: a systematic review.” <i>International Urogynecology Journal</i>, 33(5), 2022.</p>
+      <p>Koch, M. et al. “Women suffering from overactive bladder syndrome exhibit a higher urethral viral abundance compared to healthy controls: a pilot study.” <i>Scientific Reports</i>, 15(1):19484, 2025.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SOBRE MÍ ============ -->
+<section class="fondo-lila">
+  <div class="ancho">
+    <div class="sobre">
+      <div class="foto revela"><img src="../../violeta-foto.jpg" alt="Violeta Gil Pablo"></div>
+      <div class="revela">
+        <span class="etiqueta">Sobre mí</span>
+        <h2>Soy Violeta</h2>
+        <p>Entrenadora especializada en mujer y entrenamiento de fuerza. Mi misión es ayudar a las mujeres a entrenar <strong>respetando su biología</strong>, rompiendo miedos y adaptando el entrenamiento a su realidad psicosocial.</p>
+        <p>Desde que empecé me di cuenta de que el deporte está diseñado principalmente por y para hombres, y deja fuera muchas de nuestras necesidades, entre ellas abordar las disfunciones del conjunto abdominal-lumbar y suelo pélvico (CALP).</p>
+      </div>
+    </div>
+    <div class="redes">
+      <a class="red revela" href="https://t.me/+qk1lqoxvnAhmYThk" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.5 4.3L2.9 11.5c-1.3.5-1.3 1.2-.2 1.5l4.8 1.5 1.8 5.6c.2.6.4.8.9.8.4 0 .6-.2.9-.5l2.3-2.2 4.8 3.5c.9.5 1.5.2 1.7-.8l3.1-14.7c.3-1.3-.5-1.9-1.5-1.4z"/></svg><b>Telegram</b><span>Contenido que no publico en ningún otro lado</span></a>
+      <a class="red revela" href="https://www.instagram.com/violetagilpablo/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg><b>Instagram</b><span>Donde más activa estoy, a diario</span></a>
+      <a class="red revela" href="https://youtube.com/@violetagilpablocoach" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8zM9.8 15.1V8.9l5.4 3.1z"/></svg><b>YouTube</b><span>Más de 450 ejercicios para integrar el CALP</span></a>
+      <a class="red revela" href="https://www.violetagilpablo.com/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg><b>Mi web</b><span>Cómo trabajo y cómo puedo ayudarte</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CIERRE ============ -->
+<section class="cierre">
+  <div class="ancho revela">
+    <h2>¡Gracias por llegar hasta aquí!</h2>
+    <p>La información por sí sola no transforma, pero la consciencia sí. Ojalá esta guía te haya hecho mirar con otros ojos tus ganas de hacer pis… y todo lo que implican para tu cuerpo.</p>
+    <p>Si este material te ha hecho pensar, si sientes que te representa, y si hasta ahora has entrenado como has podido pero quieres más herramientas… esto es solo el principio.</p>
+    <p class="grande">Si quieres ir a la raíz, individualizar tu entrenamiento y entender tu cuerpo de verdad, escríbeme:<br>“Estoy lista para integrar el CALP en mi entreno”.</p>
+    <div class="botones">
+      <a class="boton" href="https://ig.me/m/violetagilpablo" target="_blank" rel="noopener">Escribirme por Instagram</a>
+      <a class="boton linea" href="mailto:violetagilpablo@gmail.com?subject=Estoy%20lista%20para%20integrar%20el%20CALP%20en%20mi%20entreno">Escribirme por correo</a>
+    </div>
+    <p class="firma">Porque no estás sola, y entrenar con seguridad y confianza sí es posible.<br>Un abrazo, Violeta Gil Pablo</p>
+    <div class="descarga-final">
+      <a class="boton linea" href="guia-ganas-de-hacer-pis.pdf" download>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+        Descargar la guía en PDF
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+document.documentElement.classList.add('js');
+
+// Barra de progreso de lectura
+const barra=document.getElementById('progreso');
+addEventListener('scroll',()=>{const h=document.documentElement;barra.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';},{passive:true});
+
+// Revelado al hacer scroll
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}}),{threshold:.15});
+document.querySelectorAll('.revela').forEach(el=>io.observe(el));
+
+// Carrusel
+const car=document.getElementById('carrusel'),tarjetas=[...car.children],puntos=document.getElementById('puntos');
+tarjetas.forEach(()=>puntos.appendChild(document.createElement('span')));
+const paso=()=>tarjetas[0].getBoundingClientRect().width+18;
+document.getElementById('sig').onclick=()=>car.scrollBy({left:paso(),behavior:'smooth'});
+document.getElementById('ant').onclick=()=>car.scrollBy({left:-paso(),behavior:'smooth'});
+const marca=()=>{const i=Math.round(car.scrollLeft/paso());[...puntos.children].forEach((p,k)=>p.classList.toggle('on',k===Math.min(i,tarjetas.length-1)));};
+car.addEventListener('scroll',marca,{passive:true});marca();
+
+// Escala interactiva 0-10
+const niveles=[
+  {max:4,c:'#a9d3ae',t:'Tranquila',x:'No hay necesidad real de ir ahora.',k:'<b>No vayas “por si acaso”.</b>Sigue con lo que estés haciendo. Si vas, refuerzas la inercia.'},
+  {max:7,c:'#f0c47a',t:'Zona de entrenamiento',x:'Aquí es donde se reeduca la urgencia.',k:'<b>Este es tu momento para practicar.</b>Respira lento, cambia el foco a algo que te pida atención y retrasa unos minutos. Debajo tienes los 4 pasos.'},
+  {max:9,c:'#e98f74',t:'Ganas altas',x:'A partir del 8–9 sí puedes ir.',k:'<b>Puedes ir al baño.</b>Si saltaste directamente al 8 sin pasar por el 6–7, prueba igualmente a retrasarlo un poco con alguna actividad, a ver si baja.'},
+  {max:10,c:'#c95f6c',t:'No aguanto más',x:'Ve al baño.',k:'<b>Ve sin culpa.</b>La reeducación se hace sobre todo en los niveles 5–7. Poco a poco irás llegando menos aquí.'}
+];
+const escala=document.getElementById('escala'),med=document.getElementById('medidor');
+const pinta=()=>{const v=+escala.value,n=niveles.find(l=>v<=l.max);
+  document.getElementById('numero').textContent=v;
+  med.style.setProperty('--p',v*10);med.style.setProperty('--c',n.c);
+  document.getElementById('estadoTitulo').textContent=n.t;
+  document.getElementById('estadoTexto').textContent=n.x;
+  document.getElementById('consejo').innerHTML=n.k;};
+escala.addEventListener('input',pinta);pinta();
+
+// 15 días del diario que se van marcando
+const dias=document.getElementById('dias');
+for(let i=1;i<=15;i++){const s=document.createElement('span');s.textContent=i;dias.appendChild(s);}
+new IntersectionObserver((es,o)=>es.forEach(e=>{if(e.isIntersecting){[...dias.children].forEach((d,i)=>setTimeout(()=>d.classList.add('hecho'),i*120));o.disconnect();}}),{threshold:.6}).observe(dias);
+</script>
+</body>
+</html>
