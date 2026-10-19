@@ -167,6 +167,15 @@ details.prob li{margin-top:6px}
 .infografia img{width:100%;height:auto;border-radius:14px}
 .infografia figcaption{font-size:14px;color:var(--suave);margin-top:12px;text-align:center}
 @media (max-width:760px){.info-rotulos{grid-template-columns:1fr}}
+.pausa{background:var(--vino);color:#fff;text-align:center;padding:64px 0}
+.pausa .burbuja{margin:0 auto 22px;width:150px;height:150px}
+.pausa h3{color:var(--oro);font-size:clamp(22px,4vw,30px)}
+.pausa p{color:rgba(255,255,255,.85);max-width:460px;margin:8px auto 0;font-size:15.5px}
+.guia-resp{position:relative;height:30px;margin-top:14px;font-family:var(--titulo);font-size:22px;color:#fff}
+.guia-resp span{position:absolute;left:0;right:0;animation:alterna 8s ease-in-out infinite}
+.guia-resp span+span{animation-delay:-4s}
+@keyframes alterna{0%,45%{opacity:1}50%,95%{opacity:0}100%{opacity:1}}
+@media (prefers-reduced-motion:reduce){.guia-resp span{animation:none}.guia-resp span+span{display:none}}
 /* Sobre mí y cierre */
 .sobre{display:grid;grid-template-columns:.8fr 1.2fr;gap:36px;align-items:center}
 .sobre .foto{border-radius:26px;overflow:hidden;transform:rotate(-2deg);box-shadow:0 26px 50px -30px rgba(94,53,66,.7);border:6px solid #fff}
@@ -288,6 +297,16 @@ details.prob li{margin-top:6px}
         <li>Reduce la tolerancia al dióxido de carbono, fundamental para liberar oxígeno a los tejidos.</li>
         <li>Te fatigas antes, tu resistencia cae y la recuperación es más lenta.</li></ul></details>
     </div>
+  </div>
+</section>
+
+<!-- Pausa para respirar -->
+<section class="pausa">
+  <div class="ancho revela">
+    <div class="burbuja" aria-hidden="true"></div>
+    <h3>Haz una pausa y respira conmigo</h3>
+    <div class="guia-resp" aria-hidden="true"><span>Inhala por la nariz…</span><span>…exhala largo y suave</span></div>
+    <p>Sigue a la bolita durante unas cuantas respiraciones: cuando crece, inhalas; cuando se encoge, exhalas.</p>
   </div>
 </section>
 
