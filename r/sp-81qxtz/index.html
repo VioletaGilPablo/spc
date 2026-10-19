@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Progresión de impactos | Violeta Gil Pablo</title>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="description" content="Aprende una progresión para volver a saltar libre.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&family=Varela+Round&display=swap" rel="stylesheet">
+<style>
+:root{
+  --vino:#784755;--vino-osc:#5e3542;--oro:#efdb82;--rosa:#d19c92;
+  --lila:#e8d7e2;--lila-2:#f3e9ef;--crema:#fffaf6;--negro:#292929;
+  --texto:#3d2c33;--suave:#7a6670;
+  --titulo:"League Spartan",sans-serif;--cuerpo:"Varela Round",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:var(--cuerpo);background:var(--crema);color:var(--texto);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,svg,video{display:block;max-width:100%}
+a{color:inherit}
+.progreso{position:fixed;top:0;left:0;height:4px;width:0;background:linear-gradient(90deg,var(--rosa),var(--vino));z-index:50}
+.ancho{max-width:900px;margin:0 auto;padding:0 22px}
+section{padding:84px 0}
+.fondo-lila{background:var(--lila-2)}
+.etiqueta{display:inline-block;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--vino);background:var(--lila);border-radius:999px;padding:7px 16px;margin-bottom:18px}
+h1,h2,h3{font-family:var(--titulo);color:var(--vino-osc);line-height:1.12}
+h2{font-size:clamp(28px,5vw,42px);font-weight:600;margin-bottom:18px}
+h3{font-size:clamp(19px,3vw,23px);font-weight:600;margin-bottom:8px}
+p+p{margin-top:14px}
+strong{color:var(--vino-osc)}
+.dorado{background:linear-gradient(transparent 58%,rgba(239,219,130,.75) 58%);padding:0 2px}
+.boton{display:inline-flex;align-items:center;gap:10px;font-family:var(--cuerpo);font-weight:600;font-size:14.5px;letter-spacing:1.4px;text-transform:uppercase;text-decoration:none;color:var(--negro);background:var(--oro);border:1px solid var(--oro);border-radius:999px;padding:16px 28px;transition:all .2s;cursor:pointer}
+.boton:hover{background:var(--vino);border-color:var(--vino);color:#fff}
+.boton.linea{background:transparent;color:var(--vino);border-color:var(--vino)}
+.boton svg{width:18px;height:18px}
+
+/* Hero */
+.hero{padding:40px 0 76px;background:radial-gradient(70% 60% at 85% 10%,var(--lila) 0,transparent 70%),radial-gradient(60% 50% at 0% 100%,var(--lila-2) 0,transparent 70%)}
+.hero .logo{width:190px;margin:0 auto 44px}
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(42px,7vw,72px);font-weight:700;letter-spacing:-.5px}
+.hero h1 span{color:var(--vino)}
+.hero .bajada{font-size:19px;color:var(--suave);margin:16px 0 28px;max-width:440px}
+.hero .meta{display:flex;flex-wrap:wrap;gap:16px;margin-top:18px;font-size:13.5px;color:var(--suave)}
+.hero .meta b{color:var(--vino)}
+.salto-video{position:relative;max-width:260px;margin:0 auto}
+.salto-video video{width:100%;border-radius:26px;border:6px solid #fff;box-shadow:0 26px 50px -28px rgba(94,53,66,.7);transform:rotate(2deg);background:#000}
+.salto-video .sello{position:absolute;left:-26px;bottom:34px;background:var(--oro);color:var(--vino-osc);font-family:var(--titulo);font-weight:700;font-size:15px;border-radius:999px;padding:8px 16px;transform:rotate(-6deg);box-shadow:0 10px 20px -12px rgba(0,0,0,.4)}
+
+/* Por qué hablar */
+.va-de{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:28px 0}
+.va-de div{background:#fff;border:1px solid var(--lila);border-radius:20px;padding:20px 20px 20px 54px;position:relative;font-size:15.5px}
+.va-de div::before{content:"";position:absolute;left:20px;top:22px;width:20px;height:20px;border-radius:50%;background:var(--rosa);box-shadow:0 0 0 5px var(--lila-2)}
+.no-es{text-align:center;margin:36px auto;font-family:var(--titulo);font-size:clamp(26px,4.6vw,40px);color:var(--vino-osc)}
+.no-es s{color:var(--rosa);text-decoration-thickness:3px}
+.clave{background:var(--vino);color:#fff;border-radius:24px;padding:28px 28px;margin-top:26px}
+.clave b{color:var(--oro);font-family:var(--titulo);font-size:20px;display:block;margin-bottom:6px}
+
+/* Gráfica de presión */
+.motivo{display:grid;grid-template-columns:auto 1fr;gap:18px;margin-top:34px;align-items:start}
+.motivo .n{width:48px;height:48px;border-radius:50%;background:var(--oro);display:grid;place-items:center;font-family:var(--titulo);font-weight:700;font-size:21px;color:var(--vino-osc)}
+.grafica{background:#fff;border:1px solid var(--lila);border-radius:24px;padding:22px 20px 14px;margin-top:18px}
+.grafica svg{width:100%;height:auto}
+.trazo{fill:none;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+.dibuja{stroke-dasharray:1000;stroke-dashoffset:1000}
+.grafica.on .dibuja{animation:dibuja 2.4s ease forwards}
+.grafica.on .dibuja.b{animation-delay:.4s}
+@keyframes dibuja{to{stroke-dashoffset:0}}
+.pico{opacity:0;transition:opacity .5s}
+.grafica.on .pico{opacity:1;transition-delay:2s}
+.grafica.on .pico.p2{transition-delay:2.4s}
+.leyenda{display:flex;gap:18px;flex-wrap:wrap;font-size:13.5px;color:var(--suave);margin-top:8px}
+.leyenda i{display:inline-block;width:22px;height:4px;border-radius:3px;vertical-align:middle;margin-right:6px}
+.capas{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+.capa{border-radius:20px;padding:20px}
+.capa.sup{background:#fff;border:1px dashed var(--rosa)}
+.capa.prof{background:var(--vino);color:#fff}
+.capa.prof b{color:var(--oro)}
+.capa b{font-family:var(--titulo);font-size:18px;display:block;color:var(--vino-osc)}
+.capa small{display:block;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;opacity:.75;margin-bottom:6px}
+
+/* Simulador */
+.simulador{background:#fff;border:1px solid var(--lila);border-radius:28px;padding:30px 28px;box-shadow:0 26px 52px -38px rgba(94,53,66,.6);margin-top:30px}
+.opciones{display:grid;grid-template-columns:1fr 1fr;gap:18px 22px}
+.grupo span{display:block;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--vino);margin-bottom:8px}
+.seg{display:flex;background:var(--lila-2);border-radius:999px;padding:4px}
+.seg button{flex:1;border:0;background:transparent;border-radius:999px;padding:10px 6px;font-family:var(--cuerpo);font-size:14px;color:var(--texto);cursor:pointer;transition:all .2s}
+.seg button.on{background:var(--vino);color:#fff;box-shadow:0 6px 14px -8px rgba(94,53,66,.8)}
+.resultado{margin-top:28px;display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center}
+.termo{width:64px;height:190px;border-radius:32px;background:var(--lila-2);position:relative;overflow:hidden;border:4px solid #fff;box-shadow:0 0 0 1px var(--lila)}
+.termo i{position:absolute;left:0;right:0;bottom:0;height:20%;background:linear-gradient(0deg,#a9d3ae,#f2e18f 45%,#f0b38b 72%,#c95f6c);background-size:100% 190px;background-position:bottom;transition:height .5s cubic-bezier(.2,.8,.2,1)}
+.nivel b{font-family:var(--titulo);font-size:clamp(30px,5vw,42px);color:var(--vino-osc);display:block;line-height:1}
+.nivel small{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--suave)}
+.nivel p{margin-top:10px;font-size:15px;color:var(--suave)}
+.variables{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:30px}
+.var{background:#fff;border:1px solid var(--lila);border-radius:20px;padding:20px}
+.var h3{font-size:18px;display:flex;align-items:center;gap:10px}
+.var .mas,.var .menos{display:flex;gap:8px;font-size:14.5px;margin-top:6px}
+.var .menos::before{content:"↓";color:#3f8f55;font-weight:700}
+.var .mas::before{content:"↑";color:#c95f6c;font-weight:700}
+
+/* Progresión */
+.niveles{position:relative;margin-top:36px;padding-left:34px}
+.niveles::before{content:"";position:absolute;left:14px;top:10px;bottom:10px;width:3px;border-radius:3px;background:linear-gradient(#a9d3ae,#f2e18f,#f0b38b,#c95f6c)}
+.niv{position:relative;background:#fff;border:1px solid var(--lila);border-radius:22px;padding:22px 22px 18px;margin-bottom:16px}
+.niv::before{content:attr(data-n);position:absolute;left:-34px;top:20px;width:30px;height:30px;border-radius:50%;background:var(--vino);color:#fff;font-family:var(--titulo);font-weight:700;display:grid;place-items:center;font-size:15px;border:3px solid var(--crema)}
+.niv h3{font-size:19px;margin-bottom:10px}
+.niv label{display:flex;gap:12px;align-items:flex-start;padding:7px 0;cursor:pointer;font-size:15px}
+.niv input{appearance:none;-webkit-appearance:none;flex:0 0 auto;width:22px;height:22px;border:2px solid var(--vino);border-radius:7px;cursor:pointer;margin-top:2px;display:grid;place-items:center}
+.niv input:checked{background:var(--vino)}
+.niv input:checked::after{content:"✓";color:#fff;font-size:13px}
+.niv label:has(input:checked) span{color:var(--suave);text-decoration:line-through;text-decoration-color:var(--rosa)}
+.niv .sub{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+.niv .sub div{flex:1 1 220px;background:var(--lila-2);border-radius:14px;padding:10px 14px;font-size:14.5px}
+.niv .sub b{display:block;font-family:var(--titulo);color:var(--vino-osc)}
+.contador{text-align:center;margin-top:10px;font-size:14px;color:var(--suave)}
+.contador b{color:var(--vino)}
+.tip{margin-top:22px;display:flex;gap:14px;align-items:flex-start;background:#fff4c9;border-radius:18px;padding:18px 20px;font-size:15px}
+.tip svg{flex:0 0 auto;width:26px;height:26px}
+
+/* Vídeos */
+.grid-videos{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
+.vid{display:flex;flex-direction:column;gap:10px}
+.vid-marco{position:relative;aspect-ratio:9/16;border-radius:20px;overflow:hidden;background:var(--vino);cursor:pointer;border:1px solid var(--lila)}
+.vid-marco img{width:100%;height:100%;object-fit:cover}
+.vid-marco iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vid-marco .sin-mini{position:absolute;inset:0;display:grid;justify-items:center;align-content:start;text-align:center;padding:26% 20px 20px;font-family:var(--titulo);font-size:22px;color:var(--oro);background:radial-gradient(circle at 50% 30%,var(--vino) 0,var(--vino-osc) 80%)}
+.play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:58px;height:58px;border-radius:50%;background:var(--oro);display:grid;place-items:center;box-shadow:0 0 0 10px rgba(239,219,130,.25);transition:transform .2s}
+.vid-marco:hover .play{transform:translate(-50%,-50%) scale(1.08)}
+.play svg{width:20px;height:20px;margin-left:3px}
+.vid p{text-align:center;font-family:var(--titulo);font-size:17px;color:var(--vino-osc)}
+.mas-yt{text-align:center;margin-top:30px}
+
+/* Sobre mí y cierre */
+.sobre{display:grid;grid-template-columns:.8fr 1.2fr;gap:36px;align-items:center}
+.sobre .foto{border-radius:26px;overflow:hidden;transform:rotate(-2deg);box-shadow:0 26px 50px -30px rgba(94,53,66,.7);border:6px solid #fff}
+.redes{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:34px}
+.red{background:#fff;border:1px solid var(--lila);border-radius:18px;padding:18px 14px;text-decoration:none;text-align:center;transition:transform .2s,border-color .2s}
+.red:hover{transform:translateY(-4px);border-color:var(--vino)}
+.red svg{width:30px;height:30px;margin:0 auto 8px;color:var(--vino)}
+.red b{display:block;font-family:var(--titulo);color:var(--vino-osc);font-size:16px}
+.red span{font-size:12.5px;color:var(--suave);line-height:1.4;display:block;margin-top:4px}
+.cierre{background:var(--vino);color:#fff;text-align:center;border-radius:34px 34px 0 0}
+.cierre h2{color:#fff}
+.cierre p{color:rgba(255,255,255,.88);max-width:600px;margin-left:auto;margin-right:auto}
+.cierre .grande{font-family:var(--titulo);font-size:clamp(20px,3.4vw,26px);color:var(--oro);margin:26px auto}
+.cierre .boton.linea{color:#fff;border-color:rgba(255,255,255,.6)}
+.cierre .boton.linea:hover{background:#fff;color:var(--vino)}
+.firma{margin-top:36px;font-size:14px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.7)}
+.descarga-final{margin-top:40px;padding-top:30px;border-top:1px solid rgba(255,255,255,.15)}
+
+.js .revela{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.js .revela.visible{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js .revela{opacity:1;transform:none;transition:none}.dibuja{stroke-dashoffset:0;animation:none!important}.pico{opacity:1}}
+@media (max-width:760px){
+  body{font-size:16px}
+  section{padding:64px 0}
+  .hero-grid,.sobre,.capas,.va-de,.variables,.opciones{grid-template-columns:1fr}
+  .hero-grid{text-align:center}
+  .hero .bajada{margin-left:auto;margin-right:auto}
+  .hero .meta{justify-content:center}
+  .salto-video{max-width:210px}
+  .grid-videos{grid-template-columns:repeat(2,1fr)}
+  .redes{grid-template-columns:1fr}
+  .resultado{grid-template-columns:auto 1fr}
+  .sobre .foto{max-width:300px;margin:0 auto}
+}
+</style>
+</head>
+<body>
+<div class="progreso" id="progreso"></div>
+
+<header class="hero">
+  <div class="ancho">
+    <img class="logo" src="../../logo-violeta.png" alt="Violeta Gil Pablo">
+    <div class="hero-grid">
+      <div class="revela">
+        <span class="etiqueta">Guía · Saltos y suelo pélvico</span>
+        <h1>Progresión de <span>impactos</span></h1>
+        <p class="bajada">Aprende una progresión para volver a saltar libre.</p>
+        <a class="boton" href="guia-progresion-saltos.pdf" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+          Descargar la guía en PDF
+        </a>
+        <div class="meta"><span>⏱ Lectura de <b>8 minutos</b></span><span>✍️ Por <b>Violeta Gil Pablo</b></span></div>
+      </div>
+      <div class="salto-video revela">
+        <video src="violeta-saltando.mp4" poster="violeta-saltando.jpg" autoplay muted loop playsinline aria-label="Violeta saltando a la comba"></video>
+        <span class="sello">¡A saltar libre!</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Por qué hablar de esto -->
+<section>
+  <div class="ancho">
+    <div class="revela">
+      <span class="etiqueta">¿Por qué hablar de esto?</span>
+      <h2>No va solo de que se te escape pis</h2>
+    </div>
+    <div class="va-de">
+      <div class="revela">Va de que, a veces, <strong>entrenas con miedo</strong>. De que dudas si hacer dobles, si coger más peso, si terminar el WOD.</div>
+      <div class="revela">Va de <strong>sentirte rara</strong> por algo que nadie más menciona.</div>
+      <div class="revela">Va de creer que <strong>es culpa tuya</strong>…</div>
+      <div class="revela">…o que simplemente <strong>te tienes que aguantar</strong>.</div>
+    </div>
+    <p class="no-es revela">Pero no, no es <s>«lo que hay»</s>.</p>
+    <div class="revela">
+      <p>Hablar de esto va de empezar a entender lo que tu cuerpo necesita para rendir sin miedo. De conocer tu <strong>conjunto abdominal, lumbar y pélvico (CALP)</strong> y entrenarlo para que pueda responder a cualquier estímulo: impacto, carga, velocidad…</p>
+      <p>Si de verdad quieres que tu deporte sea sostenible y compatible con tu realidad corporal, esto no va solo de hacer Kegels o ejercicios analíticos. Va de tener herramientas para <strong>adaptar, progresar y decidir</strong> con conocimiento y consciencia.</p>
+    </div>
+    <div class="clave revela">
+      <b>Aquí está la clave</b>
+      Que tu CALP desarrolle la capacidad de adaptarse a estímulos frenéticos y caóticos. Y para eso hay que prepararlo, precisamente, en ese contexto.
+    </div>
+  </div>
+</section>
+
+<!-- Por qué los saltos producen pérdidas -->
+<section class="fondo-lila">
+  <div class="ancho">
+    <div class="revela">
+      <span class="etiqueta">¿Por qué los saltos producen tantas pérdidas?</span>
+      <h2>Le pides a tu cuerpo un esfuerzo para el que <span class="dorado">aún no está preparado</span></h2>
+      <p>Los saltos dobles son uno de los movimientos que más pérdidas de orina generan. Y es una señal de que, de momento, tu cuerpo no está preparado para ese esfuerzo. ¿Por qué?</p>
+    </div>
+
+    <div class="motivo revela">
+      <span class="n">1</span>
+      <div>
+        <h3>En cada salto hay dos picos de presión</h3>
+        <p>Al saltar, tu cuerpo recibe una <strong>presión intraabdominal (PIA)</strong> mucho mayor que en otros movimientos. Tanto, que hablamos de <strong>picos dobles</strong>: uno durante la fase de vuelo, por un pequeño «rebote» de la vejiga, y otro en el aterrizaje, cuando tu peso cae en vertical.</p>
+        <div class="grafica" id="grafica">
+          <svg viewBox="0 0 520 250" role="img" aria-label="Esquema: la presión al saltar tiene dos picos, mientras que al apretar (Valsalva) sube de forma progresiva">
+            <g stroke="#e8d7e2" stroke-width="1">
+              <line x1="50" y1="40" x2="500" y2="40"/><line x1="50" y1="90" x2="500" y2="90"/><line x1="50" y1="140" x2="500" y2="140"/><line x1="50" y1="190" x2="500" y2="190"/>
+            </g>
+            <line x1="50" y1="210" x2="500" y2="210" stroke="#7a6670" stroke-width="1.5"/>
+            <line x1="50" y1="20" x2="50" y2="210" stroke="#7a6670" stroke-width="1.5"/>
+            <text x="20" y="120" font-size="12" fill="#7a6670" transform="rotate(-90 20 120)" text-anchor="middle" font-family="Varela Round">Presión intraabdominal</text>
+            <text x="275" y="236" font-size="12" fill="#7a6670" text-anchor="middle" font-family="Varela Round">Tiempo</text>
+            <path class="trazo dibuja b" stroke="#d19c92" stroke-dasharray="7 7" d="M55 208 C120 206 160 200 210 175 S300 120 350 112 S430 118 470 150"/>
+            <path class="trazo dibuja" stroke="#784755" d="M55 208 C110 206 130 190 150 120 S175 30 190 40 S215 150 240 168 S290 150 320 112 S360 120 380 150 S430 200 470 205"/>
+            <g class="pico"><circle cx="186" cy="40" r="22" fill="none" stroke="#efdb82" stroke-width="4"/><rect x="214" y="18" width="128" height="26" rx="13" fill="#efdb82"/><text x="278" y="36" text-anchor="middle" font-size="13" font-family="League Spartan" font-weight="600" fill="#5e3542">1º · fase de vuelo</text></g>
+            <g class="pico p2"><circle cx="322" cy="112" r="20" fill="none" stroke="#efdb82" stroke-width="4"/><rect x="346" y="64" width="138" height="26" rx="13" fill="#efdb82"/><text x="415" y="82" text-anchor="middle" font-size="13" font-family="League Spartan" font-weight="600" fill="#5e3542">2º · aterrizaje</text></g>
+          </svg>
+          <div class="leyenda"><span><i style="background:#784755"></i>Salto</span><span><i style="background:#d19c92"></i>Apretar (Valsalva)</span><span style="margin-left:auto;font-size:12px">Esquema orientativo</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="motivo revela">
+      <span class="n">2</span>
+      <div>
+        <h3>Todo tu peso cae en vertical</h3>
+        <p>Saltar a la comba hace que todo tu peso caiga en un plano vertical, lo que genera una presión alta. Y cuando duplicamos la altura para el doble (DU), <strong>la presión aumenta todavía más</strong>.</p>
+      </div>
+    </div>
+
+    <div class="motivo revela">
+      <span class="n">3</span>
+      <div>
+        <h3>La presión va hacia la parte delantera del suelo pélvico</h3>
+        <p>El suelo pélvico está para sostener y amortiguar, <strong>pero la musculatura más preparada para ello está en la parte posterior e interna</strong>, no en la delantera, que es hacia donde se dirige la presión en el impacto.</p>
+        <div class="capas">
+          <div class="capa sup"><small>Capa 1 · superficial y anterior</small><b>Pequeña y superficial</b>Rodea los cuerpos eréctiles y sexuales femeninos. No es la que está pensada para sostener grandes presiones.</div>
+          <div class="capa prof"><small>Capa 2 · profunda y posterior</small><b>El diafragma pélvico</b>Está preparado para responder a presiones. Su función es <strong style="color:#fff">sostener</strong>.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="motivo revela">
+      <span class="n">4</span>
+      <div>
+        <h3>El miedo también cuenta</h3>
+        <p>Si llevas mucho tiempo con pérdidas, es normal que afrontes los saltos con tensión, miedo o desconfianza. Y eso <strong>afecta directamente a cómo gestionas la presión</strong>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Variables y simulador -->
+<section>
+  <div class="ancho">
+    <div class="revela">
+      <span class="etiqueta">Guía: progresión en los saltos</span>
+      <h2>No todos los saltos generan la misma presión</h2>
+      <p>Hay variables clave que aumentan o reducen el estímulo sobre tu CALP. Combínalas y verás cuánto cambia. <strong>Prueba el simulador:</strong></p>
+    </div>
+
+    <div class="simulador revela">
+      <div class="opciones">
+        <div class="grupo"><span>🦶 Apoyo</span><div class="seg" data-var="apoyo"><button type="button" data-v="0" class="on">Unilateral</button><button type="button" data-v="1">Bilateral</button></div></div>
+        <div class="grupo"><span>↔️ Dirección</span><div class="seg" data-var="dir"><button type="button" data-v="0" class="on">Hacia adelante</button><button type="button" data-v="1">En el sitio</button></div></div>
+        <div class="grupo"><span>⛰️ Superficie</span><div class="seg" data-var="sup"><button type="button" data-v="-1">Cuesta arriba</button><button type="button" data-v="0" class="on">Llano</button><button type="button" data-v="1">Cuesta abajo</button></div></div>
+        <div class="grupo"><span>⚖️ Elementos</span><div class="seg" data-var="ele"><button type="button" data-v="-1">Asistencia</button><button type="button" data-v="0" class="on">Nada</button><button type="button" data-v="1">Resistencia</button></div></div>
+      </div>
+      <div class="resultado">
+        <div class="termo"><i id="termo"></i></div>
+        <div class="nivel"><small>Presión estimada</small><b id="nivelTxt">Bajo</b><p id="nivelDesc"></p></div>
+      </div>
+    </div>
+
+    <div class="variables">
+      <div class="var revela"><h3>🦶 Apoyo</h3><div class="menos"><span><strong>Unilateral:</strong> menos presión. Menos masa en contacto, más control, menos rebote.</span></div><div class="mas"><span><strong>Bilateral:</strong> más presión. Más masa, más impacto vertical, menos control de la dispersión.</span></div></div>
+      <div class="var revela"><h3>↔️ Dirección</h3><div class="menos"><span><strong>Hacia adelante:</strong> menos presión, el cuerpo se desplaza y reparte el impacto.</span></div><div class="mas"><span><strong>En el sitio (vertical):</strong> más presión, el impacto vuelve directo hacia abajo.</span></div></div>
+      <div class="var revela"><h3>⛰️ Superficie o entorno</h3><div class="menos"><span><strong>Cuesta arriba:</strong> menor impacto.</span></div><div class="mas"><span><strong>Cuesta abajo:</strong> mayor impacto.</span></div><p style="font-size:14px;color:var(--suave);margin-top:6px">Y además: superficies blandas o inestables.</p></div>
+      <div class="var revela"><h3>⚖️ Otros elementos</h3><div class="menos"><span><strong>Asistencias:</strong> TRX o anillas, bandas, superficies blandas, barra fija o rack. Descargan peso o impacto.</span></div><div class="mas"><span><strong>Resistencias:</strong> chaleco lastrado, mancuernas, comba, superficies duras o reactivas.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Progresión -->
+<section class="fondo-lila">
+  <div class="ancho">
+    <div class="revela">
+      <span class="etiqueta">De menor a mayor impacto y presión</span>
+      <h2>Tu progresión, nivel a nivel</h2>
+      <p>Te lo dejo desglosado para que lo apliques directamente. Ve marcando lo que ya dominas: tu progreso se queda guardado en este dispositivo.</p>
+    </div>
+    <div class="niveles" id="niveles">
+      <div class="niv revela" data-n="1"><h3>Impactos con menor estímulo de presión</h3>
+        <label><input type="checkbox"><span>Desplazamientos sin salto (cambio de apoyo sin impacto)</span></label>
+        <label><input type="checkbox"><span>Saltos hacia adelante (baja presión)</span></label>
+        <label><input type="checkbox"><span>Saltos unilaterales hacia adelante</span></label></div>
+      <div class="niv revela" data-n="2"><h3>Impactos con intensidad progresiva</h3>
+        <label><input type="checkbox"><span>Saltos bilaterales hacia adelante</span></label>
+        <label><input type="checkbox"><span>Saltos unilaterales laterales (de lado a lado)</span></label>
+        <label><input type="checkbox"><span>Saltos bilaterales laterales</span></label></div>
+      <div class="niv revela" data-n="3"><h3>Impactos verticales progresivos</h3>
+        <label><input type="checkbox"><span>Saltos unilaterales en vertical</span></label>
+        <label><input type="checkbox"><span>Saltos bilaterales en vertical</span></label>
+        <label><input type="checkbox"><span>Multisaltos poco explosivos</span></label></div>
+      <div class="niv revela" data-n="4"><h3>Impactos con más exigencia</h3>
+        <label><input type="checkbox"><span>Multisaltos con más altura</span></label>
+        <label><input type="checkbox"><span>Multisaltos con comba</span></label>
+        <label><input type="checkbox"><span>Saltos en superficies inestables (bosu, arena, colchoneta)</span></label>
+        <label><input type="checkbox"><span>Saltos con carga (peso, chaleco lastrado)</span></label></div>
+      <div class="niv revela" data-n="5"><h3>Impactos en pendiente</h3>
+        <div class="sub">
+          <div><b>📉 Menos exigencia</b><label style="padding:4px 0"><input type="checkbox"><span>Saltos cuesta arriba</span></label></div>
+          <div><b>📈 Más exigencia</b><label style="padding:4px 0"><input type="checkbox"><span>Saltos cuesta abajo (aumenta impacto y presión)</span></label></div>
+        </div></div>
+    </div>
+    <p class="contador" id="contador"></p>
+    <div class="tip revela">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#784755" stroke-width="2" stroke-linecap="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.8.8 1 1.5 1 2.5h6c0-1 .2-1.7 1-2.5A6 6 0 0 0 12 3z"/></svg>
+      <p><strong>Tip:</strong> puedes combinar variables según la progresión. Esto es solo un ejemplo: aquí puedes aplicar tu creatividad y encontrar mil opciones más.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Vídeos -->
+<section>
+  <div class="ancho">
+    <div class="revela" style="text-align:center">
+      <span class="etiqueta">Algunos ejemplos en vídeo</span>
+      <h2>Así se ven en la práctica</h2>
+    </div>
+    <div class="grid-videos">
+      <div class="vid revela"><div class="vid-marco" data-id="Xslq6oNOfDI"><img src="videos/Xslq6oNOfDI.webp" alt="Aterrizaje unilateral" loading="lazy"><span class="play"><svg viewBox="0 0 24 24" fill="#292929"><path d="M8 5v14l11-7z"/></svg></span></div><p>Aterrizaje unilateral</p></div>
+      <div class="vid revela"><div class="vid-marco" data-id="HvMKIlvwIZ4"><span class="sin-mini">Aterrizaje<br>bilateral</span><span class="play"><svg viewBox="0 0 24 24" fill="#292929"><path d="M8 5v14l11-7z"/></svg></span></div><p>Aterrizaje bilateral</p></div>
+      <div class="vid revela"><div class="vid-marco" data-id="25nSmkrogzc"><img src="videos/25nSmkrogzc.webp" alt="Impactos unilaterales sobre cajón" loading="lazy"><span class="play"><svg viewBox="0 0 24 24" fill="#292929"><path d="M8 5v14l11-7z"/></svg></span></div><p>Impactos unilaterales sobre cajón</p></div>
+      <div class="vid revela"><div class="vid-marco" data-id="JFDEqqaqT6Q"><img src="videos/JFDEqqaqT6Q.webp" alt="Aterrizaje lateral" loading="lazy"><span class="play"><svg viewBox="0 0 24 24" fill="#292929"><path d="M8 5v14l11-7z"/></svg></span></div><p>Aterrizaje lateral</p></div>
+      <div class="vid revela"><div class="vid-marco" data-id="t5eN9z0vGAU"><img src="videos/t5eN9z0vGAU.webp" alt="Saltos en rampa" loading="lazy"><span class="play"><svg viewBox="0 0 24 24" fill="#292929"><path d="M8 5v14l11-7z"/></svg></span></div><p>Saltos en rampa</p></div>
+      <div class="vid revela"><div class="vid-marco" data-id="CTTuIiuhglQ"><img src="videos/CTTuIiuhglQ.webp" alt="Saltos con SkiErg" loading="lazy"><span class="play"><svg viewBox="0 0 24 24" fill="#292929"><path d="M8 5v14l11-7z"/></svg></span></div><p>Saltos con SkiErg</p></div>
+    </div>
+    <div class="mas-yt revela"><a class="boton linea" href="https://youtube.com/@violetagilpablocoach" target="_blank" rel="noopener">Todo esto y mucho más en mi canal de YouTube</a></div>
+  </div>
+</section>
+
+<!-- Sobre mí -->
+<section class="fondo-lila">
+  <div class="ancho">
+    <div class="sobre">
+      <div class="foto revela"><img src="../../violeta-foto.jpg" alt="Violeta Gil Pablo"></div>
+      <div class="revela">
+        <span class="etiqueta">Sobre mí</span>
+        <h2>Soy Violeta</h2>
+        <p>Entrenadora especializada en mujer y entrenamiento de fuerza. Mi misión es ayudar a las mujeres a entrenar <strong>respetando su biología</strong>, rompiendo miedos y adaptando el entrenamiento a su realidad psicosocial.</p>
+        <p>El deporte está diseñado principalmente por y para hombres, y deja fuera muchas de nuestras necesidades, entre ellas abordar las disfunciones del conjunto abdominal-lumbar y suelo pélvico (CALP).</p>
+      </div>
+    </div>
+    <div class="redes">
+      <a class="red revela" href="https://www.instagram.com/violetagilpablo/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg><b>Instagram</b><span>Donde más activa estoy, a diario</span></a>
+      <a class="red revela" href="https://youtube.com/@violetagilpablocoach" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8zM9.8 15.1V8.9l5.4 3.1z"/></svg><b>YouTube</b><span>Más de 450 ejercicios para integrar el CALP</span></a>
+      <a class="red revela" href="https://www.violetagilpablo.com/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg><b>Mi web</b><span>Cómo trabajo y cómo puedo ayudarte</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- Cierre -->
+<section class="cierre">
+  <div class="ancho revela">
+    <h2>¡Gracias por llegar hasta aquí!</h2>
+    <p>La información por sí sola no transforma, pero la consciencia sí. Ojalá esta guía te haya hecho mirar con otros ojos los saltos… y todo lo que implican para tu cuerpo.</p>
+    <p>Si este material te ha hecho pensar, si sientes que te representa, y si hasta ahora has entrenado como has podido pero quieres más herramientas… esto es solo el principio.</p>
+    <p class="grande">Si quieres ir a la raíz, individualizar tu entrenamiento y entender tu cuerpo de verdad, escríbeme:<br>«Estoy lista para integrar el CALP en mi entreno».</p>
+    <a class="boton" href="https://ig.me/m/violetagilpablo" target="_blank" rel="noopener">Escribirme por Instagram</a>
+    <p class="firma">Porque no estás sola, y entrenar con seguridad y confianza sí es posible.<br>Un abrazo, Violeta Gil Pablo</p>
+    <div class="descarga-final">
+      <a class="boton linea" href="guia-progresion-saltos.pdf" download>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+        Descargar la guía en PDF
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+document.documentElement.classList.add('js');
+const barra=document.getElementById('progreso');
+addEventListener('scroll',()=>{const h=document.documentElement;barra.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';},{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}}),{threshold:.15});
+document.querySelectorAll('.revela').forEach(el=>io.observe(el));
+
+// Gráfica: se dibuja al llegar
+const graf=document.getElementById('grafica');
+new IntersectionObserver((es,o)=>es.forEach(e=>{if(e.isIntersecting){graf.classList.add('on');o.disconnect();}}),{threshold:.5}).observe(graf);
+
+// Simulador de presión (base según la tabla de la guía: apoyo + dirección)
+const estado={apoyo:0,dir:0,sup:0,ele:0};
+const base=[['Bajo','Medio'],['Medio-alto','Alto']]; // [dirección][apoyo]
+const etiquetas=['Muy bajo','Bajo','Medio','Medio-alto','Alto','Muy alto'];
+const descr={
+ 'Muy bajo':'Un muy buen punto de partida para empezar a reintroducir impactos.',
+ 'Bajo':'Hacia adelante y a una pierna: la opción más amable para empezar.',
+ 'Medio':'Un paso más: tu CALP empieza a recibir algo más de presión.',
+ 'Medio-alto':'Impacto vertical: el peso vuelve directo hacia abajo.',
+ 'Alto':'En el sitio y a dos pies: aquí la presión es máxima.',
+ 'Muy alto':'Exigencia extra: resérvalo para cuando el nivel anterior esté sostenido.'};
+const pinta=()=>{
+  const b=base[estado.dir][estado.apoyo];
+  let i=etiquetas.indexOf(b)+estado.sup+estado.ele;
+  i=Math.max(0,Math.min(5,i));
+  const t=etiquetas[i];
+  document.getElementById('termo').style.height=(14+i*17)+'%';
+  document.getElementById('nivelTxt').textContent=t;
+  document.getElementById('nivelDesc').textContent=descr[t];
+};
+document.querySelectorAll('.seg').forEach(seg=>seg.addEventListener('click',e=>{
+  const b=e.target.closest('button');if(!b)return;
+  seg.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));
+  estado[seg.dataset.var]=+b.dataset.v;pinta();
+}));
+pinta();
+
+// Progresión con checklist guardado
+const cajas=[...document.querySelectorAll('#niveles input')];
+let marc=[];try{marc=JSON.parse(localStorage.getItem('vgp-saltos')||'[]');}catch(e){}
+cajas.forEach((c,i)=>{c.checked=marc.includes(i);c.addEventListener('change',()=>{marc=cajas.map((x,k)=>x.checked?k:-1).filter(k=>k>=0);try{localStorage.setItem('vgp-saltos',JSON.stringify(marc));}catch(e){}cuenta();});});
+const cuenta=()=>{document.getElementById('contador').innerHTML='Llevas <b>'+cajas.filter(c=>c.checked).length+' de '+cajas.length+'</b> ejercicios dominados';};
+cuenta();
+
+// Vídeos: miniatura y clic para reproducir
+document.querySelectorAll('.vid-marco').forEach(m=>m.addEventListener('click',function(){
+  this.innerHTML='<iframe src="https://www.youtube.com/embed/'+this.dataset.id+'?autoplay=1&rel=0&playsinline=1" title="Ejemplo de salto" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
+},{once:true}));
+</script>
+</body>
+</html>
