@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Respiración: guía para mejorar tu eficiencia respiratoria | Violeta Gil Pablo</title>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="description" content="Guía para mejorar la eficiencia respiratoria y su relación con el suelo pélvico.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&family=Varela+Round&display=swap" rel="stylesheet">
+<style>
+:root{
+  --vino:#784755;--vino-osc:#5e3542;--oro:#efdb82;--rosa:#d19c92;
+  --lila:#e8d7e2;--lila-2:#f3e9ef;--crema:#fffaf6;--negro:#292929;
+  --texto:#3d2c33;--suave:#7a6670;--aire:#9fcbd6;
+  --titulo:"League Spartan",sans-serif;--cuerpo:"Varela Round",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:var(--cuerpo);background:var(--crema);color:var(--texto);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+.progreso{position:fixed;top:0;left:0;height:4px;width:0;background:linear-gradient(90deg,var(--rosa),var(--vino));z-index:50}
+.ancho{max-width:900px;margin:0 auto;padding:0 22px}
+section{padding:84px 0}
+.fondo-lila{background:var(--lila-2)}
+.etiqueta{display:inline-block;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--vino);background:var(--lila);border-radius:999px;padding:7px 16px;margin-bottom:18px}
+h1,h2,h3{font-family:var(--titulo);color:var(--vino-osc);line-height:1.12}
+h2{font-size:clamp(28px,5vw,42px);font-weight:600;margin-bottom:18px}
+h3{font-size:clamp(19px,3vw,23px);font-weight:600;margin-bottom:8px}
+p+p{margin-top:14px}
+strong{color:var(--vino-osc)}
+.dorado{background:linear-gradient(transparent 58%,rgba(239,219,130,.75) 58%);padding:0 2px}
+.boton{display:inline-flex;align-items:center;gap:10px;font-family:var(--cuerpo);font-weight:600;font-size:14.5px;letter-spacing:1.4px;text-transform:uppercase;text-decoration:none;color:var(--negro);background:var(--oro);border:1px solid var(--oro);border-radius:999px;padding:16px 28px;transition:all .2s;cursor:pointer}
+.boton:hover{background:var(--vino);border-color:var(--vino);color:#fff}
+.boton.linea{background:transparent;color:var(--vino);border-color:var(--vino)}
+.boton svg{width:18px;height:18px}
+.idea{margin-top:26px;background:var(--vino);color:#fff;border-radius:22px;padding:24px 26px}
+.idea b{display:block;font-family:var(--titulo);color:var(--oro);font-size:19px;margin-bottom:4px}
+.aviso{margin-top:24px;display:flex;gap:14px;align-items:flex-start;background:#fff4c9;border-radius:18px;padding:18px 20px;font-size:15px}
+.aviso svg{flex:0 0 auto;width:26px;height:26px}
+
+/* Hero */
+.hero{padding:40px 0 80px;text-align:center;background:radial-gradient(70% 60% at 85% 10%,var(--lila) 0,transparent 70%),radial-gradient(60% 50% at 0% 100%,var(--lila-2) 0,transparent 70%)}
+.hero .logo{width:190px;margin:0 auto 34px}
+.burbuja{width:128px;height:128px;margin:0 auto 26px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff 0,var(--aire) 45%,var(--vino) 130%);animation:respira 8s ease-in-out infinite;box-shadow:0 20px 40px -20px rgba(94,53,66,.6)}
+@keyframes respira{0%,100%{transform:scale(.78)}45%,55%{transform:scale(1.05)}}
+.hero h1{font-size:clamp(46px,8vw,80px);font-weight:700;letter-spacing:-.5px}
+.hero .bajada{font-size:19px;color:var(--suave);margin:14px auto 30px;max-width:520px}
+.hero .meta{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-top:18px;font-size:13.5px;color:var(--suave)}
+.hero .meta b{color:var(--vino)}
+.indice{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:34px}
+.indice a{text-decoration:none;background:#fff;border:1px solid var(--lila);border-radius:999px;padding:8px 14px;font-size:13.5px;color:var(--vino-osc);transition:all .2s}
+.indice a:hover{background:var(--vino);color:#fff;border-color:var(--vino)}
+
+/* Sincronía diafragma - suelo pélvico */
+.sincro{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;margin-top:30px}
+.torso{background:#fff;border:1px solid var(--lila);border-radius:26px;padding:22px;text-align:center}
+.torso svg{width:100%;max-width:280px;margin:0 auto}
+.dia{transition:transform 3.4s ease-in-out;transform-origin:center}
+.estado-resp{font-family:var(--titulo);font-size:22px;color:var(--vino-osc);margin-top:6px;min-height:30px}
+.estado-resp small{display:block;font-family:var(--cuerpo);font-size:13.5px;color:var(--suave)}
+.pasos-resp{display:grid;gap:12px}
+.pasos-resp div{background:#fff;border-radius:18px;padding:18px 20px;border:1px solid var(--lila);transition:all .4s}
+.pasos-resp div.on{background:var(--vino);color:#fff;border-color:var(--vino)}
+.pasos-resp div.on b{color:var(--oro)}
+.pasos-resp b{display:block;font-family:var(--titulo);font-size:19px;color:var(--vino-osc)}
+
+/* Respiración bucal */
+.problemas{display:grid;gap:12px;margin-top:28px}
+details.prob{background:#fff;border:1px solid var(--lila);border-radius:18px}
+details.prob summary{list-style:none;cursor:pointer;padding:18px 22px;display:flex;align-items:center;gap:16px;font-family:var(--titulo);font-size:18px;color:var(--vino-osc)}
+details.prob summary::-webkit-details-marker{display:none}
+details.prob summary .n{flex:0 0 auto;width:38px;height:38px;border-radius:50%;background:var(--oro);display:grid;place-items:center;font-weight:700}
+details.prob summary::after{content:"+";margin-left:auto;font-size:26px;color:var(--vino);transition:transform .25s}
+details.prob[open] summary::after{transform:rotate(45deg)}
+details.prob ul{padding:0 24px 20px 76px;font-size:15.5px}
+details.prob li{margin-top:6px}
+
+/* Nasal vs bucal */
+.versus{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px}
+.vs{border-radius:22px;padding:24px}
+.vs.boca{background:#fff;border:1px dashed var(--rosa)}
+.vs.nariz{background:var(--vino);color:#fff}
+.vs.nariz h3{color:var(--oro)}
+.vs ul{list-style:none;margin-top:8px}
+.vs li{padding-left:26px;position:relative;margin-top:8px;font-size:15.5px}
+.vs.boca li::before{content:"✕";position:absolute;left:0;color:var(--rosa);font-weight:700}
+.vs.nariz li::before{content:"✓";position:absolute;left:0;color:var(--oro);font-weight:700}
+
+/* 3D */
+.tres-d{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}
+.dir{background:#fff;border:1px solid var(--lila);border-radius:20px;padding:22px 16px;text-align:center}
+.dir svg{width:62px;height:62px;margin:0 auto 10px}
+.dir b{display:block;font-family:var(--titulo);font-size:18px;color:var(--vino-osc)}
+.dir span{font-size:14px;color:var(--suave)}
+.pulsa{animation:pulsa 3s ease-in-out infinite;transform-origin:center}
+@keyframes pulsa{0%,100%{transform:scale(.88)}50%{transform:scale(1.08)}}
+
+/* Tests con cronómetro */
+.tests{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:28px}
+.test{background:#fff;border:1px solid var(--lila);border-radius:26px;padding:26px 24px;box-shadow:0 24px 50px -38px rgba(94,53,66,.6);display:flex;flex-direction:column}
+.test .num{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--vino)}
+.test ol{padding-left:20px;font-size:15px;margin:10px 0 0}
+.test ol li{margin-top:4px}
+.crono{font-family:var(--titulo);font-weight:700;font-size:56px;color:var(--vino-osc);text-align:center;margin:18px 0 6px;font-variant-numeric:tabular-nums}
+.crono small{font-size:22px;color:var(--suave)}
+.test button.cr{border:0;border-radius:999px;padding:14px;font-family:var(--cuerpo);font-weight:600;letter-spacing:1px;text-transform:uppercase;font-size:14px;cursor:pointer;background:var(--oro);color:var(--vino-osc);transition:all .2s}
+.test button.cr.corriendo{background:var(--vino);color:#fff}
+.veredicto{margin-top:14px;border-radius:14px;padding:12px 14px;font-size:14.5px;background:var(--lila-2);min-height:48px}
+.veredicto b{font-family:var(--titulo);color:var(--vino-osc)}
+.historial{margin-top:10px;font-size:13px;color:var(--suave)}
+.historial b{color:var(--vino)}
+.meta-test{margin-top:auto;padding-top:12px;font-size:13px;color:var(--suave)}
+
+/* Fases */
+.fases{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:28px}
+.fase{background:#fff;border:1px solid var(--lila);border-radius:24px;padding:24px}
+.fase small{display:block;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--vino)}
+.fase h3{margin-top:4px}
+.fase .obj{font-size:14.5px;color:var(--suave);margin-bottom:10px}
+.tarea{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid var(--lila-2);cursor:pointer;font-size:15px}
+.tarea input{appearance:none;-webkit-appearance:none;flex:0 0 auto;width:22px;height:22px;border:2px solid var(--vino);border-radius:7px;cursor:pointer;margin-top:2px;display:grid;place-items:center}
+.tarea input:checked{background:var(--vino)}
+.tarea input:checked::after{content:"✓";color:#fff;font-size:13px}
+.tarea b{display:block;font-family:var(--titulo);color:var(--vino-osc);font-size:16px}
+.tarea span{color:var(--suave);font-size:14px}
+.escalera-sueno{display:flex;gap:6px;margin-top:6px;flex-wrap:wrap}
+.escalera-sueno i{font-style:normal;font-size:12.5px;background:var(--lila-2);border-radius:999px;padding:3px 10px;color:var(--vino-osc)}
+.ojo{margin-top:22px;background:var(--vino);color:#fff;border-radius:20px;padding:20px 22px;font-size:15.5px}
+.ojo b{color:var(--oro);font-family:var(--titulo);font-size:18px}
+
+/* Ejercicios específicos */
+.ejs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+.ej{background:#fff;border:1px solid var(--lila);border-radius:22px;padding:22px}
+.ej small{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--vino)}
+.ej h3{font-size:19px;margin-top:4px}
+.ej ul{padding-left:18px;font-size:14.5px}
+.ej li{margin-top:5px}
+.calc{margin-top:12px;background:var(--lila-2);border-radius:14px;padding:12px 14px;font-size:14px}
+.calc input{width:64px;border:1px solid var(--lila);border-radius:10px;padding:6px 8px;font-family:var(--cuerpo);font-size:15px;text-align:center}
+.calc b{font-family:var(--titulo);color:var(--vino-osc)}
+
+/* Ejercicios con vídeo */
+.ejv{display:grid;grid-template-columns:200px 1fr;gap:22px;align-items:start;background:#fff;border:1px solid var(--lila);border-radius:26px;padding:20px;margin-top:18px}
+.vid-marco{position:relative;aspect-ratio:9/16;border-radius:18px;overflow:hidden;background:var(--vino);cursor:pointer}
+.vid-marco img{width:100%;height:100%;object-fit:cover}
+.vid-marco iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:52px;height:52px;border-radius:50%;background:var(--oro);display:grid;place-items:center;box-shadow:0 0 0 9px rgba(239,219,130,.25);transition:transform .2s}
+.vid-marco:hover .play{transform:translate(-50%,-50%) scale(1.08)}
+.play svg{width:18px;height:18px;margin-left:3px}
+.ejv small{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--vino)}
+.ejv h3{margin-top:4px}
+.ejv .orig{font-size:13px;color:var(--suave);margin-bottom:10px;font-style:italic}
+.ejv ul{padding-left:18px;font-size:15px}
+.ejv li{margin-top:6px}
+.ejv .claves{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--rosa);margin-bottom:4px}
+
+/* Sobre mí y cierre */
+.sobre{display:grid;grid-template-columns:.8fr 1.2fr;gap:36px;align-items:center}
+.sobre .foto{border-radius:26px;overflow:hidden;transform:rotate(-2deg);box-shadow:0 26px 50px -30px rgba(94,53,66,.7);border:6px solid #fff}
+.redes{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:34px}
+.red{background:#fff;border:1px solid var(--lila);border-radius:18px;padding:18px 14px;text-decoration:none;text-align:center;transition:transform .2s,border-color .2s}
+.red:hover{transform:translateY(-4px);border-color:var(--vino)}
+.red svg{width:30px;height:30px;margin:0 auto 8px;color:var(--vino)}
+.red b{display:block;font-family:var(--titulo);color:var(--vino-osc);font-size:16px}
+.red span{font-size:12.5px;color:var(--suave);line-height:1.4;display:block;margin-top:4px}
+.cierre{background:var(--vino);color:#fff;text-align:center;border-radius:34px 34px 0 0}
+.cierre h2{color:#fff}
+.cierre p{color:rgba(255,255,255,.88);max-width:600px;margin-left:auto;margin-right:auto}
+.cierre .grande{font-family:var(--titulo);font-size:clamp(20px,3.4vw,26px);color:var(--oro);margin:26px auto}
+.cierre .boton.linea{color:#fff;border-color:rgba(255,255,255,.6)}
+.cierre .boton.linea:hover{background:#fff;color:var(--vino)}
+.firma{margin-top:36px;font-size:14px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.7)}
+.descarga-final{margin-top:40px;padding-top:30px;border-top:1px solid rgba(255,255,255,.15)}
+
+.js .revela{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.js .revela.visible{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js .revela{opacity:1;transform:none;transition:none}.burbuja,.pulsa{animation:none}.dia{transition:none}}
+@media (max-width:760px){
+  body{font-size:16px}
+  section{padding:64px 0}
+  .sincro,.versus,.tests,.fases,.sobre{grid-template-columns:1fr}
+  .tres-d,.ejs{grid-template-columns:1fr}
+  .ejv{grid-template-columns:1fr}
+  .ejv .vid-marco{max-width:240px;margin:0 auto;width:100%}
+  .redes{grid-template-columns:1fr}
+  .sobre .foto{max-width:300px;margin:0 auto}
+  details.prob ul{padding-left:42px}
+}
+</style>
+</head>
+<body>
+<div class="progreso" id="progreso"></div>
+
+<header class="hero">
+  <div class="ancho revela">
+    <img class="logo" src="../../logo-violeta.png" alt="Violeta Gil Pablo">
+    <div class="burbuja" aria-hidden="true"></div>
+    <span class="etiqueta">Guía para mejorar la eficiencia respiratoria</span>
+    <h1>Respiración</h1>
+    <p class="bajada">Tu respiración y tu suelo pélvico son un mismo sistema. Aprende a respirar mejor para que tu CALP responda mejor.</p>
+    <a class="boton" href="guia-respiracion.pdf" download>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+      Descargar la guía en PDF
+    </a>
+    <div class="meta"><span>⏱ Lectura de <b>10 minutos</b></span><span>✍️ Por <b>Violeta Gil Pablo</b></span></div>
+    <nav class="indice" aria-label="Contenido de la guía">
+      <a href="#relacion">Suelo pélvico y respiración</a><a href="#bucal">Respiración bucal</a><a href="#tresd">Respiración 3D</a><a href="#tests">Tests</a><a href="#dia">Tareas del día a día</a><a href="#ejercicios">Ejercicios</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Relación -->
+<section id="relacion">
+  <div class="ancho">
+    <div class="revela">
+      <span class="etiqueta">¿Qué relación tienen?</span>
+      <h2>Respiración y suelo pélvico: <span class="dorado">un mismo sistema</span></h2>
+      <p>Solemos pensar en el suelo pélvico como algo aislado, pero forma parte de un engranaje mayor: el sistema respiratorio y la gestión de presiones. De hecho, al suelo pélvico también se le llama <strong>diafragma pélvico</strong>, porque funciona sincronizado con el diafragma torácico. Míralo:</p>
+    </div>
+    <div class="sincro">
+      <div class="torso revela">
+        <svg viewBox="-10 0 300 300" aria-label="Animación: el diafragma y el suelo pélvico bajan al inhalar y suben al exhalar">
+          <path d="M60 30 C40 90 40 200 70 270 L190 270 C220 200 220 90 200 30 Z" fill="#f3e9ef" stroke="#e8d7e2" stroke-width="3"/>
+          <g id="pulmon" style="transition:transform 3.4s ease-in-out;transform-origin:130px 80px">
+            <ellipse cx="98" cy="88" rx="28" ry="42" fill="#9fcbd6" opacity=".6"/>
+            <ellipse cx="162" cy="88" rx="28" ry="42" fill="#9fcbd6" opacity=".6"/>
+          </g>
+          <path id="diafragma" class="dia" d="M62 140 Q130 100 198 140" fill="none" stroke="#784755" stroke-width="7" stroke-linecap="round"/>
+          <path id="suelo" class="dia" d="M78 236 Q130 262 182 236" fill="none" stroke="#d19c92" stroke-width="7" stroke-linecap="round"/>
+          <text x="208" y="128" font-family="League Spartan" font-size="12" font-weight="600" fill="#784755">Diafragma</text>
+          <text x="190" y="262" font-family="League Spartan" font-size="12" font-weight="600" fill="#c27e72">Suelo pélvico</text>
+        </svg>
+        <p class="estado-resp" id="estadoResp">Inhala<small>por la nariz</small></p>
+      </div>
+      <div class="pasos-resp">
+        <div id="pInhala" class="revela"><b>Cuando inhalas</b>El diafragma desciende y el suelo pélvico también.</div>
+        <div id="pExhala" class="revela"><b>Cuando exhalas</b>Ambos ascienden y ayudan a regular la presión.</div>
+        <p class="revela" style="font-size:15.5px">👉 Cada respiración está conectada con la función de tu CALP (conjunto abdominal, lumbar y pélvico).</p>
+      </div>
+    </div>
+    <div class="aviso revela">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#784755" stroke-width="2" stroke-linecap="round"><path d="M12 3l9 16H3z"/><path d="M12 10v4M12 17h.01"/></svg>
+      <p>Si esta coordinación se pierde (por rigidez torácica, exceso de tensión en la cadena posterior o mala mecánica respiratoria), se afecta la estabilidad y el rendimiento, y pueden aparecer <strong>pérdidas de orina, molestias lumbares o fatiga innecesaria</strong> en tus entrenos.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Respiración bucal -->
+<section class="fondo-lila" id="bucal">
+  <div class="ancho">
+    <div class="revela">
+      <span class="etiqueta">Respiración bucal</span>
+      <h2>5 cosas que pasan cuando respiras por la boca</h2>
+      <p>Toca cada una para verla en detalle.</p>
+    </div>
+    <div class="problemas">
+      <details class="prob revela" open><summary><span class="n">1</span>Pierdes eficiencia en la mecánica respiratoria</summary><ul>
+        <li>La boca no filtra, humedece ni regula el aire como la nariz.</li>
+        <li>Se activan en exceso los músculos accesorios del cuello y los hombros (escalenos, esternocleidomastoideo): hacen el trabajo que debería hacer el diafragma, y eso genera tensión en la zona cervical y lumbar.</li>
+        <li>Se pierde movilidad torácica y la respiración se vuelve superficial y limitada.</li></ul></details>
+      <details class="prob revela"><summary><span class="n">2</span>Se altera la gestión de presiones y tu suelo pélvico</summary><ul>
+        <li>El diafragma y el suelo pélvico funcionan como un sistema conectado.</li>
+        <li>Respirar por la boca descoordina ese sistema y afecta a la presión intraabdominal.</li>
+        <li>Tu CALP pierde capacidad de estabilización, y eso repercute directamente en tus entrenamientos.</li></ul></details>
+      <details class="prob revela"><summary><span class="n">3</span>Cambian tu postura y cómo te mueves</summary><ul>
+        <li>Suele ir acompañada de la cabeza adelantada.</li>
+        <li>Aumenta la tensión cervical y reduce la activación del core profundo.</li>
+        <li>Con el tiempo, contribuye a dolores cervicales y lumbares, y altera la eficiencia de tus movimientos en el box y en tu día a día.</li></ul></details>
+      <details class="prob revela"><summary><span class="n">4</span>Tu sistema nervioso se queda en alerta</summary><ul>
+        <li>La respiración nasal estimula el nervio vago, clave para la calma, la recuperación y la digestión.</li>
+        <li>La bucal prolonga el estado de alerta y tensión (modo simpático).</li>
+        <li>Esto afecta a tu descanso, tu estrés y tu recuperación tras entrenar.</li></ul></details>
+      <details class="prob revela"><summary><span class="n">5</span>Toleras peor el CO₂ y te fatigas antes</summary><ul>
+        <li>Favorece la hiperventilación crónica.</li>
+        <li>Reduce la tolerancia al dióxido de carbono, fundamental para liberar oxígeno a los tejidos.</li>
+        <li>Te fatigas antes, tu resistencia cae y la recuperación es más lenta.</li></ul></details>
+    </div>
+  </div>
+</section>
+
+<!-- Nasal vs bucal y 3D -->
+<section id="tresd">
+  <div class="ancho">
+    <div class="revela">
+      <span class="etiqueta">La respiración bucal no permite la respiración 3D</span>
+      <h2>Cuando tira de músculos auxiliares, no hay respiración 3D real</h2>
+    </div>
+    <div class="versus">
+      <div class="vs boca revela"><h3>👄 Respirando por la boca</h3><ul><li>No hay expansión completa del tórax.</li><li>El diafragma no desciende de forma eficiente.</li><li>El suelo pélvico no acompaña en la gestión de presiones.</li></ul></div>
+      <div class="vs nariz revela"><h3>👃 Entrenando la nasal</h3><ul><li>Activa el diafragma y mejora la movilidad torácica.</li><li>Optimiza la gestión de presiones y la estabilidad del CALP.</li><li>Reduce la tensión en el cuello y mejora la postura.</li><li>Estimula el nervio vago: mejor regulación del sistema nervioso.</li><li>Usas mejor el oxígeno: más resistencia y recuperación más rápida.</li></ul></div>
+    </div>
+    <p class="revela" style="text-align:center;font-family:var(--titulo);font-size:20px;color:var(--vino-osc);margin-top:20px">En el box: más control en los WODs, menos fatiga y un CALP más competente.</p>
+
+    <div class="revela" style="margin-top:56px">
+      <h2>Respiración 3D: expansión completa</h2>
+      <p>Una respiración realmente eficiente no se queda en el pecho o en el abdomen: necesita <strong>expandirse en tres dimensiones</strong>.</p>
+    </div>
+    <div class="tres-d">
+      <div class="dir revela"><svg viewBox="0 0 64 64"><g class="pulsa"><circle cx="32" cy="32" r="16" fill="#9fcbd6"/></g><path d="M32 4v10M32 50v10" stroke="#784755" stroke-width="3.5" stroke-linecap="round"/><path d="M27 9l5-5 5 5M27 55l5 5 5-5" fill="none" stroke="#784755" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Delante y detrás</b><span>Pecho y espalda</span></div>
+      <div class="dir revela"><svg viewBox="0 0 64 64"><g class="pulsa"><circle cx="32" cy="32" r="16" fill="#9fcbd6"/></g><path d="M4 32h10M50 32h10" stroke="#784755" stroke-width="3.5" stroke-linecap="round"/><path d="M9 27l-5 5 5 5M55 27l5 5-5 5" fill="none" stroke="#784755" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Laterales</b><span>Las costillas se abren a los lados</span></div>
+      <div class="dir revela"><svg viewBox="0 0 64 64"><path d="M14 14 Q32 6 50 14" fill="none" stroke="#784755" stroke-width="4" stroke-linecap="round"/><path d="M18 52 Q32 60 46 52" fill="none" stroke="#d19c92" stroke-width="4" stroke-linecap="round"/><g class="pulsa"><circle cx="32" cy="33" r="11" fill="#9fcbd6"/></g></svg><b>Arriba y abajo</b><span>Diafragma ↔ suelo pélvico</span></div>
+    </div>
+    <div class="aviso revela">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#784755" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+      <p>Esto requiere <strong>buena movilidad en la caja torácica</strong> y evitar la tendencia a comprimir la cadena posterior, muy común por la rigidez y el exceso de trabajo extensor. Solo con esta expansión 3D la respiración involucra de verdad al transverso, al diafragma y al suelo pélvico.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Tests -->
+<section class="fondo-lila" id="tests">
+  <div class="ancho">
+    <div class="revela">
+      <span class="etiqueta">Test inicial</span>
+      <h2>Lo que no se puede medir, no se puede mejorar</h2>
+      <p>Antes de empezar, mide cómo está tu control respiratorio con estos dos tests. <strong>Usa el cronómetro</strong>: tus resultados se guardan en este dispositivo para que, dentro de 3–4 semanas, hagas el test final y compares.</p>
+    </div>
+    <div class="tests">
+      <div class="test revela" data-test="apnea" data-ref="25">
+        <span class="num">Test 1</span>
+        <h3>Aguante de apnea nasal</h3>
+        <ol><li>Inhala por la nariz y exhala por la nariz hasta vaciar el aire.</li><li>Pulsa «Empezar» y aguanta sin respirar.</li><li>Pulsa «Parar» cuando sientas la primera necesidad natural de inhalar.</li></ol>
+        <div class="crono"><span class="seg">0.0</span><small>″</small></div>
+        <button type="button" class="cr">Empezar</button>
+        <div class="veredicto">Repítelo 2–3 veces.</div>
+        <div class="historial"></div>
+        <p class="meta-test">Referencia: menos de 25″ indica baja tolerancia al CO₂.</p>
+      </div>
+      <div class="test revela" data-test="exhala" data-ref="8">
+        <span class="num">Test 2</span>
+        <h3>Exhalación prolongada</h3>
+        <ol><li>Inhala por la nariz.</li><li>Pulsa «Empezar» y exhala lo más lento posible por la boca, con los labios fruncidos.</li><li>Pulsa «Parar» cuando no quede aire.</li></ol>
+        <div class="crono"><span class="seg">0.0</span><small>″</small></div>
+        <button type="button" class="cr">Empezar</button>
+        <div class="veredicto">Mide cuántos segundos aguantas exhalando.</div>
+        <div class="historial"></div>
+        <p class="meta-test">Referencia: menos de 8–10″ indica poca capacidad de control respiratorio.</p>
+      </div>
+    </div>
+    <p class="revela" style="margin-top:18px;font-size:15px;color:var(--suave)"><strong>Opcional, tus sensaciones:</strong> apunta si te sientes mareada, con necesidad de suspirar, o si notas que te cuesta estar sin respirar por la boca.</p>
+  </div>
+</section>
+
+<!-- Día a día -->
+<section id="dia">
+  <div class="ancho">
+    <div class="revela">
+      <span class="etiqueta">Tareas en el día a día</span>
+      <h2>Lleva la respiración nasal a tu vida, en dos fases</h2>
+      <p>Ve marcando lo que ya has incorporado. Se guarda en este dispositivo.</p>
+    </div>
+    <div class="fases">
+      <div class="fase revela">
+        <small>Primera fase</small><h3>Respiración nasal en actividades pasivas</h3>
+        <p class="obj">Objetivo: que tu cuerpo se adapte a respirar por la nariz sin que tengas que pensarlo.</p>
+        <label class="tarea"><input type="checkbox"><div><b>Esparadrapo en actividades relajadas</b><span>Mientras lees, ves una peli, trabajas con el ordenador, limpias, haces un puzzle… Si te agobia, empieza con un trocito en el centro de los labios.</span></div></label>
+        <label class="tarea"><input type="checkbox"><div><b>Dormir con esparadrapo y tiras nasales, poco a poco</b><span class="escalera-sueno"><i>1 · siesta de 10–15′</i><i>2 · en el sofá viendo la tele</i><i>3 · una noche completa</i></span></div></label>
+        <label class="tarea"><input type="checkbox"><div><b>Hidrata la nariz</b><span>Si te cuesta respirar por la nariz, prueba un lavado nasal con suero fisiológico o agua de mar.</span></div></label>
+        <label class="tarea"><input type="checkbox"><div><b>Postura de la lengua</b><span>Que repose en el paladar, justo detrás de los dientes superiores. Ayuda a mantener la vía aérea más abierta.</span></div></label>
+      </div>
+      <div class="fase revela">
+        <small>Segunda fase</small><h3>Respiración nasal en movimiento</h3>
+        <p class="obj">Objetivo: llevar la respiración nasal a momentos más activos.</p>
+        <label class="tarea"><input type="checkbox"><div><b>Esparadrapo en actividades de pie o activas</b><span>Mientras cocinas, paseas o haces movilidad, estiramientos o bailas. Pon música o un pódcast para no estar pendiente de la boca.</span></div></label>
+        <label class="tarea"><input type="checkbox"><div><b>Mini-conditioning con respiración nasal</b><span>En el calentamiento, respira solo por la nariz, introduciendo máquinas. Si cuesta, empieza inhalando por la nariz y exhalando por la boca hasta acostumbrarte.</span></div></label>
+      </div>
+    </div>
+    <div class="ojo revela"><b>¡Ojo!</b> No es que no puedas respirar por la boca: es que esa respiración debería aparecer solo cuando la nasal no sea suficiente. Lo que trabajamos es que esa necesidad llegue más tarde. En mitad de un WOD puedes estar jadeando como un perrito y no pasa nada: ahí sí tiene sentido.</div>
+  </div>
+</section>
+
+<!-- Ejercicios -->
+<section class="fondo-lila" id="ejercicios">
+  <div class="ancho">
+    <div class="revela">
+      <span class="etiqueta">Ejercicios específicos</span>
+      <h2>Para mejorar tu respiración nasal</h2>
+    </div>
+    <div class="ejs">
+      <div class="ej revela"><small>Ejercicio 1</small><h3>Chupitos de aire</h3><p style="font-size:13.5px;color:var(--suave)">Expansión torácica 3D</p><ul><li>Coge aire completamente. Cuando creas que ya no puedes coger más por la nariz, toma pequeñas inhalaciones por la boca: mini sorbos de aire.</li><li>Mantén el aire sin tensar cuello ni hombros.</li><li>Exhala lentamente por la nariz. Si te resulta complicado, puedes compaginar.</li></ul></div>
+      <div class="ej revela"><small>Ejercicio 2</small><h3>Exhalación controlada</h3><p style="font-size:13.5px;color:var(--suave)">Basado en tu test de exhalación</p><ul><li>Inhala por la nariz y exhala lento por la boca con los labios fruncidos.</li></ul>
+        <div class="calc">Mi test de exhalación: <input type="number" id="calcSeg" min="1" max="120" value="8" aria-label="Segundos de tu test de exhalación">″<br><span id="calcRes"></span></div></div>
+      <div class="ej revela"><small>Ejercicio 3</small><h3>Respiración larga con expansión torácica</h3><ul><li>Sentada o tumbada, una mano en las costillas y otra en el abdomen.</li><li>Inhala expandiendo las costillas en todas direcciones, con el foco en los laterales y la espalda.</li><li>Exhala lentamente sintiendo cómo todo se comprime.</li></ul></div>
+    </div>
+
+    <div class="revela" style="margin-top:56px">
+      <h2>Para entrenar y liberar la respiración 3D</h2>
+      <p>Toca el vídeo para ver cada ejercicio.</p>
+    </div>
+
+    <div class="ejv revela">
+      <div class="vid-marco" data-id="OwVCj82d1X4"><img src="videos/OwVCj82d1X4.webp" alt="Expansión torácica de pie" loading="lazy"><span class="play"><svg viewBox="0 0 24 24" fill="#292929"><path d="M8 5v14l11-7z"/></svg></span></div>
+      <div><small>Entrenar la respiración 3D</small><h3>Expansión torácica de pie</h3><p class="orig">Standing thoracic expansion</p><p class="claves">Indicaciones clave</p><ul>
+        <li>Inhala amplio hacia la parte posterior y lateral de la caja torácica, usando las gomas como referencia para sentir la expansión sin forzar.</li>
+        <li>Exhala de forma larga y controlada, con el cuello relajado. Puedes poner las manos suavemente en la zona cervical para comprobar que no hay tensión extra.</li>
+        <li>Pies paralelos, para favorecer una posición de la pelvis que facilite usar la musculatura profunda.</li></ul></div>
+    </div>
+    <div class="ejv revela">
+      <div class="vid-marco" data-id="m31TZo_1K2s"><img src="videos/m31TZo_1K2s.webp" alt="Aducción de cadera boca abajo con apertura pélvica" loading="lazy"><span class="play"><svg viewBox="0 0 24 24" fill="#292929"><path d="M8 5v14l11-7z"/></svg></span></div>
+      <div><small>Entrenar la respiración 3D</small><h3>Aducción de cadera boca abajo con apertura pélvica</h3><p class="orig">Prone hip adduction with pelvic outlet</p><p class="claves">Indicaciones clave</p><ul>
+        <li>Boca abajo sobre los antebrazos con las palmas hacia arriba, rodillas apoyadas en los bloques y una pelota blanda entre ellas.</li>
+        <li>Inhala por la nariz llevando el aire hacia atrás y a los lados de tus costillas.</li>
+        <li>Al exhalar por la boca, largo y suave, aprieta ligeramente la pelota y siente cómo tu pelvis se recoge.</li>
+        <li>Mantén uno o dos segundos al final de la exhalación, relaja y vuelve a inhalar.</li></ul></div>
+    </div>
+    <div class="ejv revela">
+      <div class="vid-marco" data-id="Q5LYGzPzCd8"><img src="videos/Q5LYGzPzCd8.webp" alt="Jefferson curl" loading="lazy"><span class="play"><svg viewBox="0 0 24 24" fill="#292929"><path d="M8 5v14l11-7z"/></svg></span></div>
+      <div><small>Liberar la respiración 3D</small><h3>Jefferson curl</h3><p class="claves">Indicaciones clave</p><ul>
+        <li>Pies paralelos y rodillas desbloqueadas.</li>
+        <li>Baja vértebra a vértebra desde el cuello, dejando que la cadera se desplace hacia atrás a la vez. La parte delantera del tronco se cierra y la posterior se alarga, con una exhalación larga que te ayude a controlar la bajada.</li>
+        <li>Los brazos caen relajados hacia el suelo, sin tirar, hasta tu máxima flexión controlada.</li>
+        <li>Para subir, desenrolla la columna vértebra a vértebra, empezando por la pelvis y la zona lumbar.</li></ul></div>
+    </div>
+    <div class="ejv revela">
+      <div class="vid-marco" data-id="R3_nmFFkpp0"><img src="videos/R3_nmFFkpp0.webp" alt="Respiración abrazando un balón medicinal, sentada" loading="lazy"><span class="play"><svg viewBox="0 0 24 24" fill="#292929"><path d="M8 5v14l11-7z"/></svg></span></div>
+      <div><small>Liberar la respiración 3D</small><h3>Respiración abrazando un balón medicinal</h3><p class="orig">Seated medball breathing hug</p><p class="claves">Indicaciones clave</p><ul>
+        <li>Sentada, pies apoyados y paralelos, con la pelota contra el pecho.</li>
+        <li>Abrázala fuerte y enróllate sobre ella: el esternón y las costillas de delante se cierran suavemente mientras la espalda se redondea.</li>
+        <li>Cuello y hombros relajados, mirada hacia abajo sin tensar.</li>
+        <li>Inhala por la nariz, amplio y silencioso, hacia la zona posterior y lateral de tus costillas. Exhala por la boca, largo y suave, dejando que las costillas bajen.</li></ul></div>
+    </div>
+    <div class="ejv revela">
+      <div class="vid-marco" data-id="V5SQio7Jfmo"><img src="videos/V5SQio7Jfmo.webp" alt="Tumbada sobre el lado izquierdo para expandir las costillas derechas" loading="lazy"><span class="play"><svg viewBox="0 0 24 24" fill="#292929"><path d="M8 5v14l11-7z"/></svg></span></div>
+      <div><small>Liberar la respiración 3D</small><h3>De lado para expandir las costillas</h3><p class="orig">Left side lying for right rib expansion</p><p class="claves">Indicaciones clave</p><ul>
+        <li>De lado, rodillas semiflexionadas y pies a 90º. La mano del lado en el que te apoyas, a 90º de tu caja torácica, toca las costillas del lado contrario para sentir la expansión.</li>
+        <li>Al inhalar, dirige el aire hacia la espalda y las costillas: en el lado del suelo lo notarás por la pelota o la toalla que tengas debajo; en el otro, por tu mano.</li>
+        <li>Al exhalar por completo, siente cómo bajan las costillas y se te «hinca» el material, como si la caja torácica del lado apoyado se integrara con él.</li></ul></div>
+    </div>
+    <div class="ejv revela">
+      <div class="vid-marco" data-id="XaemreajNS8"><img src="videos/XaemreajNS8.webp" alt="Elevación de cadera 90/90 con pelota o foam roller" loading="lazy"><span class="play"><svg viewBox="0 0 24 24" fill="#292929"><path d="M8 5v14l11-7z"/></svg></span></div>
+      <div><small>Liberar la respiración 3D</small><h3>Elevación de cadera 90/90 con pelota o foam roller</h3><p class="orig">90/90 hip lift with ball or foam roller</p><p style="font-size:15px;color:var(--suave)">Mira el vídeo para ver la ejecución completa.</p></div>
+    </div>
+
+    <div class="idea revela"><b>🔁 Test final, a las 3–4 semanas</b>Repite los tests iniciales: ¿puedes exhalar más tiempo? ¿Toleras mejor el aguante de apnea? ¿Te sientes más cómoda respirando solo por la nariz? Tus resultados anteriores seguirán guardados en los cronómetros para que compares. <a href="#tests" style="color:var(--oro)">Ir a los tests →</a></div>
+  </div>
+</section>
+
+<!-- Sobre mí -->
+<section>
+  <div class="ancho">
+    <div class="sobre">
+      <div class="foto revela"><img src="../../violeta-foto.jpg" alt="Violeta Gil Pablo"></div>
+      <div class="revela">
+        <span class="etiqueta">Sobre mí</span>
+        <h2>Soy Violeta</h2>
+        <p>Entrenadora especializada en mujer y entrenamiento de fuerza. Mi misión es ayudar a las mujeres a entrenar <strong>respetando su biología</strong>, rompiendo miedos y adaptando el entrenamiento a su realidad psicosocial.</p>
+        <p>El deporte está diseñado principalmente por y para hombres, y deja fuera muchas de nuestras necesidades, entre ellas abordar las disfunciones del conjunto abdominal-lumbar y suelo pélvico (CALP).</p>
+      </div>
+    </div>
+    <div class="redes">
+      <a class="red revela" href="https://www.instagram.com/violetagilpablo/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg><b>Instagram</b><span>Donde más activa estoy, a diario</span></a>
+      <a class="red revela" href="https://youtube.com/@violetagilpablocoach" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8zM9.8 15.1V8.9l5.4 3.1z"/></svg><b>YouTube</b><span>Más de 450 ejercicios para integrar el CALP</span></a>
+      <a class="red revela" href="https://www.violetagilpablo.com/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg><b>Mi web</b><span>Cómo trabajo y cómo puedo ayudarte</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- Cierre -->
+<section class="cierre">
+  <div class="ancho revela">
+    <h2>¡Gracias por llegar hasta aquí!</h2>
+    <p>La información por sí sola no transforma, pero la consciencia y tomar acción sí. Ojalá esta guía te haya hecho mirar tu respiración y tu suelo pélvico con otros ojos… y entender cómo uno influye en el otro.</p>
+    <p>Si sientes que tu suelo pélvico no responde como debería, que tu respiración no es tu aliada, o nunca habías pensado que esto podía afectarte… puede que no hayas mirado tus disfunciones desde el enfoque correcto.</p>
+    <p class="grande">Si quieres ir a la raíz, individualizar tu entrenamiento y entender tu cuerpo de verdad, escríbeme:<br>«Estoy lista para integrar el CALP en mi entreno».</p>
+    <a class="boton" href="https://ig.me/m/violetagilpablo" target="_blank" rel="noopener">Escribirme por Instagram</a>
+    <p class="firma">Porque no estás sola, y entrenar con seguridad y confianza sí es posible.<br>Un abrazo, Violeta Gil Pablo</p>
+    <div class="descarga-final">
+      <a class="boton linea" href="guia-respiracion.pdf" download>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+        Descargar la guía en PDF
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+document.documentElement.classList.add('js');
+const barra=document.getElementById('progreso');
+addEventListener('scroll',()=>{const h=document.documentElement;barra.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';},{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}}),{threshold:.15});
+document.querySelectorAll('.revela').forEach(el=>io.observe(el));
+const guarda=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}};
+const lee=(k,d)=>{try{return JSON.parse(localStorage.getItem(k))??d;}catch(e){return d;}};
+
+// Sincronía diafragma - suelo pélvico (inhala 4s, exhala 4s)
+const dia=document.getElementById('diafragma'),suelo=document.getElementById('suelo'),pul=document.getElementById('pulmon');
+const est=document.getElementById('estadoResp'),pI=document.getElementById('pInhala'),pE=document.getElementById('pExhala');
+const reducido=matchMedia('(prefers-reduced-motion: reduce)').matches;
+let inhala=true;
+function ciclo(){
+  dia.style.transform=inhala?'translateY(26px)':'translateY(0)';
+  suelo.style.transform=inhala?'translateY(12px)':'translateY(0)';
+  pul.style.transform=inhala?'scale(1.12)':'scale(1)';
+  est.innerHTML=inhala?'Inhala<small>diafragma y suelo pélvico bajan</small>':'Exhala<small>ambos suben y regulan la presión</small>';
+  pI.classList.toggle('on',inhala);pE.classList.toggle('on',!inhala);
+  inhala=!inhala;
+}
+ciclo(); if(!reducido) setInterval(ciclo,4000);
+
+// Tests con cronómetro
+document.querySelectorAll('.test').forEach(t=>{
+  const clave='vgp-resp-'+t.dataset.test, ref=+t.dataset.ref;
+  const seg=t.querySelector('.seg'),btn=t.querySelector('.cr'),ver=t.querySelector('.veredicto'),his=t.querySelector('.historial');
+  let inicio=0,raf=0,hist=lee(clave,[]);
+  const pintaHist=()=>{ if(!hist.length){his.innerHTML='';return;}
+    const ult=hist.slice(-3).map(h=>'<b>'+h.s.toFixed(1)+'″</b> ('+new Date(h.f).toLocaleDateString('es-ES',{day:'numeric',month:'short'})+')').join(' · ');
+    const mejor=Math.max(...hist.map(h=>h.s));
+    his.innerHTML='Tus últimos: '+ult+'<br>Tu mejor marca: <b>'+mejor.toFixed(1)+'″</b>';};
+  const tick=()=>{seg.textContent=((performance.now()-inicio)/1000).toFixed(1);raf=requestAnimationFrame(tick);};
+  btn.onclick=()=>{
+    if(!raf){inicio=performance.now();tick();btn.textContent='Parar';btn.classList.add('corriendo');ver.textContent=t.dataset.test==='apnea'?'Aguanta… pulsa «Parar» al sentir la primera necesidad de inhalar.':'Exhala lento… pulsa «Parar» cuando no quede aire.';}
+    else{cancelAnimationFrame(raf);raf=0;const s=(performance.now()-inicio)/1000;seg.textContent=s.toFixed(1);btn.textContent='Repetir';btn.classList.remove('corriendo');
+      hist.push({s,f:Date.now()});guarda(clave,hist);pintaHist();
+      ver.innerHTML=s>=ref?'<b>¡Bien!</b> Estás por encima de la referencia ('+ref+'″).':'<b>Por debajo de '+ref+'″.</b> '+(t.dataset.test==='apnea'?'Indica baja tolerancia al CO₂: los ejercicios de esta guía te van a ayudar.':'Indica poco control respiratorio: el ejercicio 2 está pensado para ti.');
+      if(t.dataset.test==='exhala'){const c=document.getElementById('calcSeg');c.value=Math.round(s);calcula();}}
+  };
+  pintaHist();
+});
+
+// Calculadora del ejercicio 2 (series de ~65% del test, como el ejemplo 8″ → 5–6″)
+const calc=document.getElementById('calcSeg'),calcRes=document.getElementById('calcRes');
+function calcula(){const s=Math.max(1,+calc.value||0);const a=Math.max(1,Math.round(s*.62)),b=Math.max(a,Math.round(s*.75));calcRes.innerHTML='Tu trabajo: <b>4 series de '+(a===b?a:a+'–'+b)+'″</b> de exhalación.';}
+calc.addEventListener('input',calcula);
+const ultEx=lee('vgp-resp-exhala',[]); if(ultEx.length) calc.value=Math.round(ultEx[ultEx.length-1].s);
+calcula();
+
+// Tareas del día a día
+const tareas=[...document.querySelectorAll('.tarea input')];let marc=lee('vgp-resp-tareas',[]);
+tareas.forEach((c,i)=>{c.checked=marc.includes(i);c.addEventListener('change',()=>{marc=tareas.map((x,k)=>x.checked?k:-1).filter(k=>k>=0);guarda('vgp-resp-tareas',marc);});});
+
+// Vídeos
+document.querySelectorAll('.vid-marco').forEach(m=>m.addEventListener('click',function(){
+  this.innerHTML='<iframe src="https://www.youtube.com/embed/'+this.dataset.id+'?autoplay=1&rel=0&playsinline=1" title="Ejercicio de respiración" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
+},{once:true}));
+</script>
+</body>
+</html>
