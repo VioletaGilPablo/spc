@@ -45,6 +45,12 @@ strong{color:var(--vino-osc)}
 .hero .bajada{font-size:19px;color:var(--suave);margin:18px auto 30px;max-width:540px}
 .hero .meta{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-top:18px;font-size:13.5px;color:var(--suave)}
 .hero .meta b{color:var(--vino)}
+.portada{width:100%;max-width:820px;height:auto;margin:36px auto 0;border-radius:28px;border:6px solid #fff;box-shadow:0 30px 60px -36px rgba(94,53,66,.7)}
+.foto-bloque{display:grid;grid-template-columns:220px 1fr;gap:22px;align-items:center;background:#fff;border:1px solid var(--lila);border-radius:24px;padding:16px;margin-bottom:18px}
+.foto-bloque img{width:100%;height:auto;border-radius:16px}
+.foto-bloque p{font-size:15.5px}
+.foto-bloque b{display:block;font-family:var(--titulo);font-size:20px;color:var(--vino-osc);margin-bottom:4px}
+@media (max-width:760px){.foto-bloque{grid-template-columns:1fr}.foto-bloque img{max-width:260px;margin:0 auto}}
 .dos{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:620px;margin:40px auto 0}
 .dos div{background:#fff;border:1px solid var(--lila);border-radius:22px;padding:20px}
 .dos span{font-size:38px;display:block}
@@ -154,6 +160,7 @@ strong{color:var(--vino-osc)}
       Descargar la sesión en PDF
     </a>
     <div class="meta"><span>🏋️‍♀️ <b>3 bloques</b> · 9 ejercicios</span><span>🏠 En casa o en el box</span></div>
+    <img class="portada" src="portada-expresiones.webp" alt="Violeta entrenando con un grupo de mujeres con barras en landmine" width="1080" height="675">
     <div class="dos">
       <div><span>🌬️</span><b>Respirar</b></div>
       <div><span>🚶‍♀️</span><b>Caminar</b></div>
@@ -236,6 +243,7 @@ strong{color:var(--vino-osc)}
 
       <div class="bloque">
         <div class="bloque-cab"><h3>Bloque 3</h3><span class="rondas" data-rondas></span><p>Fuerza + patrón de marcha</p></div>
+        <div class="foto-bloque"><img src="violeta-pelota.webp" alt="Violeta cogiendo una pelota de tenis en el box" width="753" height="1000" loading="lazy"><p><b>Fuerza, pero con el foco en tu marcha</b>Sigues fortaleciendo, pero de una forma más consciente: cada ejercicio busca la rotación y el «alargo brazo, comprimo brazo» de cuando caminas.</p></div>
         <div class="opcion-box box">
           <div class="ej" data-ej="b3a">
             <div class="vid-marco" data-id="2XJ9QJSyP_A"><img src="videos/2XJ9QJSyP_A.webp" alt="Press en landmine con marcha" loading="lazy"><span class="play"><svg viewBox="0 0 24 24" fill="#292929"><path d="M8 5v14l11-7z"/></svg></span></div>
